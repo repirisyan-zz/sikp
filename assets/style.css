@@ -1,0 +1,13 @@
+.form_login {
+    padding: 30px;
+    border-radius: 10px;
+    border: 1px solid black;
+    position: absolute;
+    transform: translateX(-50%);
+    transform: translateY(50%);
+}
+
+.gambar_kotak {
+    width: 200px;
+    height: 200px;
+}
