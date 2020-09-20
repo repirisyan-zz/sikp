@@ -36,6 +36,7 @@ $(document).ready(function() {
     var menu = '<?php echo $this->session->userdata('menu')?>';
     menu_dosen(menu);
 
+
     var sandi = '<?php echo $this->session->flashdata('sandi')?>';
     notif_ubah_sandi(sandi);
 

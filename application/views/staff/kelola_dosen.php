@@ -82,8 +82,8 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
-                <button type="submit" class="btn btn-success">Simpan</button>
+                <button type="button" class="cancel btn btn-secondary" data-dismiss="modal">Batal&nbsp;</button>
+                <button type="submit" class="save btn btn-success">Simpan&nbsp;</button>
             </div>
             </form>
         </div>
@@ -124,8 +124,8 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
-                <button type="submit" class="btn btn-success">Simpan</button>
+                <button type="button" class="cancel btn btn-secondary" data-dismiss="modal">Batal&nbsp;</button>
+                <button type="submit" class="save btn btn-warning">Ubah&nbsp;</button>
             </div>
             </form>
         </div>
@@ -158,8 +158,8 @@
                 Nama : <strong><?php echo $nama?></strong>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
-                <button type="submit" class="btn btn-danger">Hapus</button>
+                <button type="button" class="cancel btn btn-secondary" data-dismiss="modal">Batal&nbsp;</button>
+                <button type="submit" class="save btn btn-danger">Hapus&nbsp;</button>
             </div>
             </form>
         </div>

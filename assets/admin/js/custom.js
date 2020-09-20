@@ -15,7 +15,6 @@ $('.js-pscroll').each(function() {
 
 });
 
-
 $(document).ready(function() {
     // Javascript method's body can be found in assets/js/demos.js
     demo.initDashboardPageCharts();
@@ -187,6 +186,17 @@ function login_null(error) {
     nowuiDashboard.showNotification('top', 'right', message, 'danger');
 };
 
+$('.save').hover(function() {
+    $(this).append("<i class='save-icon now-ui-icons ui-1_check'></i>");
+}, function() {
+    $('.save-icon').remove();
+});
+
+$('.cancel').hover(function() {
+    $(this).append("<i class='cancel-icon now-ui-icons ui-1_simple-remove'></i>");
+}, function() {
+    $('.cancel-icon').remove();
+});
 
 
 $("#upload_foto").hover(function() {

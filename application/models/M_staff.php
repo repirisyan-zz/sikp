@@ -1,9 +1,9 @@
 <?php
 class M_staff extends CI_Model {
 
-    function kelola_mhs(){
+    function kelola_mhs($number,$offset){
         $this->db->order_by('npm','ASC');
-        $query = $this->db->get('mahasiswa');
+        $query = $this->db->get('mahasiswa',$number,$offset);
         return $query;
     }
 

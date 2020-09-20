@@ -33,7 +33,6 @@
     <!-- CSS Files -->
     <link href="<?=base_url('assets/admin/css/bootstrap.min.css')?>" rel="stylesheet" />
     <link href="<?=base_url('assets/admin/css/now-ui-dashboard.min.css')?>" rel="stylesheet" />
-    <link rel="stylesheet" href="<?=base_url('assets/admin/css/datatables.min.css')?>">
     <!-- CSS Just for demo purpose, don't include it in your project -->
     <link href="<?=base_url('assets/admin/demo/demo.css')?>" rel="stylesheet" />
     <link rel="shorcut icon" type="image/ico" href="<?=base_url('assets/img/favicon.ico')?>">
@@ -102,16 +101,6 @@
                         <span class="navbar-toggler-bar navbar-kebab"></span>
                     </button>
                     <div class="collapse navbar-collapse justify-content-end" id="navigation">
-                        <form>
-                            <div class="input-group no-border">
-                                <input type="text" value="" class="form-control" placeholder="Cari...">
-                                <div class="input-group-append">
-                                    <div class="input-group-text">
-                                        <i class="now-ui-icons ui-1_zoom-bold"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
                         <ul class="navbar-nav">
                             <li class="nav-item">
                                 <a class="nav-link" href="#pablo">

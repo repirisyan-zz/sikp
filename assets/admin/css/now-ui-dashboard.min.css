@@ -23,6 +23,14 @@ Licensed under the MIT license - http://opensource.org/licenses/MIT
 Copyright (c) 2015 Daniel Eden
 */
 
+.save {
+    width: 110px;
+}
+
+.cancel {
+    width: 100px;
+}
+
 .animated {
     animation-duration: 1s;
     animation-fill-mode: both

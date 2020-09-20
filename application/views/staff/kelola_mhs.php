@@ -9,8 +9,24 @@
                 <div class="card-body">
                     <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#tambahMhs">Tambah Data
                         <i class="now-ui-icons ui-1_simple-add"></i></a>
+                    <div class="row">
+                        <div class="col-md-6">
+                        </div>
+                        <div class="col-md-3">
+                        </div>
+                        <div class="col-md-3">
+                            <div class="input-group no-border">
+                                <input type="text" class="form-control" id="filterName" placeholder="Filter...">
+                                <div class="input-group-append">
+                                    <div class="input-group-text">
+                                        <i class="now-ui-icons ui-1_zoom-bold"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <div class="table-responsive">
-                        <table class="table" id="myTable" style="width: 100%;">
+                        <table class="table" style="width: 100%;">
                             <caption>Daftar Mahasiswa</caption>
                             <thead class="text-primary">
                                 <th>
@@ -29,7 +45,7 @@
                                     Aksi
                                 </th>
                             </thead>
-                            <tbody>
+                            <tbody id="myTable">
                                 <?php
                                     foreach($data_mhs->result_array() as $i):
                                         $npm = $i['npm'];
@@ -41,7 +57,7 @@
                                     <td>
                                         <?php echo $npm?>
                                     </td>
-                                    <td>
+                                    <td class="namaa">
                                         <?php echo $nama?>
                                     </td>
                                     <td>
@@ -61,6 +77,7 @@
                                 <?php endforeach?>
                             </tbody>
                         </table>
+                        <?php echo $this->pagination->create_links();?> 
                     </div>
                 </div>
             </div>
@@ -74,29 +91,31 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="staticBackdropLabel">Tambah Data Mahasiswa</h5>
+                <h5 class="modal-title font-weight-bold" id="staticBackdropLabel">Tambah Data Mahasiswa</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
                 <?php echo form_open('Staff/Kelola_mhs/tambah_mhs','class="form_login"');?>
-                <div class="form-group row">
-                    <label for="colFormLabelSm" class="col-sm-2 col-form-label">NPM</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" name="npm" maxlength="20" required>
+                <div class="container">
+                    <div class="form-group row">
+                        <label for="colFormLabelSm" class="col-sm-2 col-form-label">NPM</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name="npm" maxlength="20" required>
+                        </div>
                     </div>
-                </div>
-                <div class="form-group row">
-                    <label for="exampleInputPassword1" class="col-sm-2 col-form-label">Nama</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" name="nama" maxlength="255" required>
+                    <div class="form-group row">
+                        <label for="exampleInputPassword1" class="col-sm-2 col-form-label">Nama</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name="nama" maxlength="255" required>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
-                <button type="submit" class="btn btn-success">Simpan</button>
+                <button type="button" class="cancel btn btn-secondary" data-dismiss="modal">Batal&nbsp;</button>
+                <button type="submit" class="save btn btn-success">Simpan&nbsp;</button>
             </div>
             </form>
         </div>
@@ -114,31 +133,33 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="staticBackdropLabel">Ubah Data Mahasiswa</h5>
+                <h5 class="modal-title font-weight-bold" id="staticBackdropLabel">Ubah Data Mahasiswa</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
-                <?php echo form_open('Staff/Kelola_mhs/ubah_mhs','class="form_login"');?>
-                <div class="form-group row">
-                    <label for="colFormLabelSm" class="col-sm-2 col-form-label">NPM</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" readonly name="npm" value="<?php echo $npm?>"
-                            maxlength="20" required>
+                <div class="container">
+                    <?php echo form_open('Staff/Kelola_mhs/ubah_mhs','class="form_login"');?>
+                    <div class="form-group row">
+                        <label for="colFormLabelSm" class="col-sm-2 col-form-label">NPM</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" readonly name="npm" value="<?php echo $npm?>"
+                                maxlength="20" required>
+                        </div>
                     </div>
-                </div>
-                <div class="form-group row">
-                    <label for="exampleInputPassword1" class="col-sm-2 col-form-label">Nama</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" name="nama" value="<?php echo $nama?>" maxlength="255"
-                            required>
+                    <div class="form-group row">
+                        <label for="exampleInputPassword1" class="col-sm-2 col-form-label">Nama</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name="nama" value="<?php echo $nama?>"
+                                maxlength="255" required>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
-                <button type="submit" class="btn btn-warning">Ubah</button>
+                <button type="button" class="cancel btn btn-secondary" data-dismiss="modal">Batal&nbsp;</button>
+                <button type="submit" class="save btn btn-warning">Ubah&nbsp;</button>
             </div>
             </form>
         </div>
@@ -157,22 +178,22 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Hapus Data Mahasiswa</h5>
+                <h5 class="modal-title font-weight-bold" id="exampleModalLabel">Hapus Data Mahasiswa</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
-                <?php echo form_open('Staff/Kelola_mhs/hapus_mhs','class="form_login"');?>
-                <input type="text" class="form-control" value="<?php echo $npm?>" hidden name="npm" maxlength="20"
-                    required>
-                Apakah anda yakin menghapus data mahasiswa <br>
-                NPM : <strong><?php echo $npm?></strong><br>
-                Nama : <strong><?php echo $nama?></strong><br>
+                <div class="container">
+                    <?php echo form_open('Staff/Kelola_mhs/hapus_mhs','class="form_login"');?>
+                    <input type="text" class="form-control" value="<?php echo $npm?>" hidden name="npm" maxlength="20"
+                        required>
+                    <p class="font-font-weight-normal">Apa anda yakin mau menghapus data mahasiswa <strong><?php echo $nama?></strong> ?</p>
+                </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
-                <button type="submit" class="btn btn-danger">Hapus</button>
+                <button type="button" class="cancel btn btn-secondary" data-dismiss="modal">Batal&nbsp;</button>
+                <button type="submit" class="save btn btn-danger">Hapus&nbsp;</button>
             </div>
             </form>
         </div>

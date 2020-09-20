@@ -82,7 +82,6 @@ class Kelola_dosen extends CI_Controller
 				'nip' => $nip,
 				'nama_dosen' => $nama
 			);
-			$this->M_staff->ubah_penguji($nip,$nama);
 			$this->M_staff->ubah_dosen($data,$nip);
 			$this->session->set_flashdata('kelola','ubah');
 			redirect(base_url('Staff/Kelola_dosen'));
