@@ -22,7 +22,7 @@ class M_rekjudul extends CI_Model {
         $this->db->set('batas_judul','batas_judul-1');
         $query = $this->db->update('dosen');
         return $query;
-    }
+    
 
     function batas_judul_tambah($nip){
         $this->db->where('nip',$nip);

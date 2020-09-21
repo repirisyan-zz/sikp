@@ -9,76 +9,57 @@
                 <div class="card-body">
                     <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#tambahMhs">Tambah Data
                         <i class="now-ui-icons ui-1_simple-add"></i></a>
-                    <div class="row">
-                        <div class="col-md-6">
-                        </div>
-                        <div class="col-md-3">
-                        </div>
-                        <div class="col-md-3">
-                            <div class="input-group no-border">
-                                <input type="text" class="form-control" id="filterName" placeholder="Filter...">
-                                <div class="input-group-append">
-                                    <div class="input-group-text">
-                                        <i class="now-ui-icons ui-1_zoom-bold"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="table-responsive">
-                        <table class="table" style="width: 100%;">
-                            <caption>Daftar Mahasiswa</caption>
-                            <thead class="text-primary">
-                                <th>
-                                    NPM
-                                </th>
-                                <th>
-                                    Nama
-                                </th>
-                                <th>
-                                    Kemajuan
-                                </th>
-                                <th>
-                                    Status
-                                </th>
-                                <th class="text-center">
-                                    Aksi
-                                </th>
-                            </thead>
-                            <tbody id="myTable">
-                                <?php
+                    <table class="table nowrap" id="myTable" style="width: 100%;">
+                        <caption>Daftar Mahasiswa</caption>
+                        <thead class="text-primary">
+                            <th>
+                                NPM
+                            </th>
+                            <th>
+                                Nama
+                            </th>
+                            <th>
+                                Kemajuan
+                            </th>
+                            <th>
+                                Status
+                            </th>
+                            <th class="text-center">
+                                Aksi
+                            </th>
+                        </thead>
+                        <tbody id="myTable">
+                            <?php
                                     foreach($data_mhs->result_array() as $i):
                                         $npm = $i['npm'];
                                         $nama = $i['nama'];
                                         $kemajuan = $i['kemajuan'];
                                         $status = $i['status'];
                                     ?>
-                                <tr>
-                                    <td>
-                                        <?php echo $npm?>
-                                    </td>
-                                    <td class="namaa">
-                                        <?php echo $nama?>
-                                    </td>
-                                    <td>
-                                        <?php echo $kemajuan?>
-                                    </td>
-                                    <td>
-                                        <?php echo $status?>
-                                    </td>
-                                    <td class="text-center">
-                                        <a href="#" class="btn btn-warning" data-toggle="modal"
-                                            data-target="#ubahMhs<?php echo $npm?>">Ubah <i class="fa fa-edit"></i></a>
-                                        <a href="#" class="btn btn-danger" data-toggle="modal"
-                                            data-target="#hapusMhs<?php echo $npm?>">Hapus
-                                            <i class="fa fa-trash"></i></a>
-                                    </td>
-                                </tr>
-                                <?php endforeach?>
-                            </tbody>
-                        </table>
-                        <?php echo $this->pagination->create_links();?> 
-                    </div>
+                            <tr>
+                                <td>
+                                    <?php echo $npm?>
+                                </td>
+                                <td class="namaa">
+                                    <?php echo $nama?>
+                                </td>
+                                <td>
+                                    <?php echo $kemajuan?>
+                                </td>
+                                <td>
+                                    <?php echo $status?>
+                                </td>
+                                <td class="text-center">
+                                    <a href="#" class="btn btn-warning" data-toggle="modal"
+                                        data-target="#ubahMhs<?php echo $npm?>">Ubah <i class="fa fa-edit"></i></a>
+                                    <a href="#" class="btn btn-danger" data-toggle="modal"
+                                        data-target="#hapusMhs<?php echo $npm?>">Hapus
+                                        <i class="fa fa-trash"></i></a>
+                                </td>
+                            </tr>
+                            <?php endforeach?>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
@@ -102,13 +83,14 @@
                     <div class="form-group row">
                         <label for="colFormLabelSm" class="col-sm-2 col-form-label">NPM</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" name="npm" maxlength="20" required>
+                            <input type="number" class="form-control" name="npm" maxlength="20" required>
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="exampleInputPassword1" class="col-sm-2 col-form-label">Nama</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" name="nama" maxlength="255" required>
+                            <input type="text" class="form-control" name="nama" onkeydown="upperCaseF(this)"
+                                maxlength="255" required>
                         </div>
                     </div>
                 </div>
@@ -144,15 +126,15 @@
                     <div class="form-group row">
                         <label for="colFormLabelSm" class="col-sm-2 col-form-label">NPM</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" readonly name="npm" value="<?php echo $npm?>"
+                            <input type="number" class="form-control" readonly name="npm" value="<?php echo $npm?>"
                                 maxlength="20" required>
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="exampleInputPassword1" class="col-sm-2 col-form-label">Nama</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" name="nama" value="<?php echo $nama?>"
-                                maxlength="255" required>
+                            <input type="text" class="form-control" onkeydown="upperCaseF(this)" name="nama"
+                                value="<?php echo $nama?>" maxlength="255" required>
                         </div>
                     </div>
                 </div>
@@ -188,7 +170,11 @@
                     <?php echo form_open('Staff/Kelola_mhs/hapus_mhs','class="form_login"');?>
                     <input type="text" class="form-control" value="<?php echo $npm?>" hidden name="npm" maxlength="20"
                         required>
-                    <p class="font-font-weight-normal">Apa anda yakin mau menghapus data mahasiswa <strong><?php echo $nama?></strong> ?</p>
+                    <div class="container">
+                        <p class="font-font-weight-normal">Apa anda yakin akan menghapus data mahasiswa
+                            <strong><?php echo $nama?></strong> ?
+                        </p>
+                    </div>
                 </div>
             </div>
             <div class="modal-footer">

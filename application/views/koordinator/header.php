@@ -31,9 +31,8 @@
     <link rel="stylesheet" href="<?=base_url('assets/fontawesome/css/all.css')?>">
     <!-- CSS Files -->
     <link href="<?=base_url('assets/admin/css/bootstrap.min.css')?>" rel="stylesheet" />
-    <link href="<?=base_url('assets/admin/css/now-ui-dashboard.min.css')?>" rel="stylesheet" />
-    <link rel="stylesheet" href="<?=base_url('assets/admin/css/dataTables.bootstrap4.min.css')?>">
-    <link rel="stylesheet" href="<?=base_url('assets/admin/css/table_responsive.css')?>">
+    <link href="<?=base_url('assets/admin/css/now-ui-dashboard.css')?>" rel="stylesheet" />
+    <link rel="stylesheet" href="<?=base_url('assets/admin/css/datatables.min.css')?>">
     <!-- CSS Just for demo purpose, don't include it in your project -->
     <link href="<?=base_url('assets/admin/demo/demo.css')?>" rel="stylesheet" />
     <link rel="shorcut icon" type="image/ico" href="<?=base_url('assets/img/favicon.ico')?>">
@@ -82,7 +81,7 @@
                     <li id="menu_jadwal">
                         <a href="<?=base_url('Koordinator/Jadwal')?>">
                             <i class="now-ui-icons ui-1_calendar-60"></i>
-                            <p>Buat Jadwal Seminar</p>
+                            <p>Jadwal Seminar</p>
                         </a>
                     </li>
                 </ul>

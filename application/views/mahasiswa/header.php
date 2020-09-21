@@ -29,7 +29,8 @@
     <link rel="stylesheet" href="<?=base_url('assets/fontawesome/css/all.css')?>">
     <!-- CSS Files -->
     <link href="<?=base_url('assets/admin/css/bootstrap.min.css')?>" rel="stylesheet" />
-    <link href="<?=base_url('assets/admin/css/now-ui-dashboard.min.css')?>" rel="stylesheet" />
+    <link href="<?=base_url('assets/admin/css/now-ui-dashboard.css')?>" rel="stylesheet" />
+    <link rel="stylesheet" href="<?=base_url('assets/admin/css/datatables.min.css')?>">
     <!-- CSS Just for demo purpose, don't include it in your project -->
     <link rel="shorcut icon" type="image/ico" href="<?=base_url('assets/img/favicon.ico')?>">
 </head>
@@ -70,7 +71,7 @@
                     </li>
                     <li id="menu_rek_judul">
                         <a href="<?=base_url('Mahasiswa/Rek_judul')?>" id="info_judul">
-                            <i class="now-ui-icons ui-1_zoom-bold"></i>
+                            <i class="now-ui-icons files_single-copy-04"></i>
                             <p id="text_info_judul">Rekomendasi Judul</p>
                         </a>
                     </li>

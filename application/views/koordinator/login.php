@@ -3,7 +3,8 @@
         <div class="col-12 col-sm-6 col-md-3">
             <?php echo form_open('Koordinator/Koordinator/login','class="form-center"');?>
             <div class="card" style="border-radius: 1rem;">
-                <h5 class="card-header text-muted"><i class="now-ui-icons ui-1_lock-circle-open"></i> Login Koordinator</h5>
+                <h5 class="card-header text-muted"><i class="now-ui-icons ui-1_lock-circle-open"></i> Login Koordinator
+                </h5>
                 <div class="card-body">
                     <div class="form-group" style="margin-top: 20px;">
                         <input type="text" name="username" placeholder="Username" class="form-control"
@@ -18,6 +19,8 @@
             echo form_error('password',"<i class=\"far fa-times-circle\"></i> &nbsp;");?></small>
                     </div>
                     <button type="submit" class="btn btn-primary btn-block">Login</button>
+                    <small style="color: red;"><?php echo $this->session->flashdata('login')?></small>
+                    <br>
                     <small><a href="<?=base_url('Landing')?>" class="text-decoration-none"><i class="fa fa-home"></i>
                             Kembali ke
                             beranda</a></small>

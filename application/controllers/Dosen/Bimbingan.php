@@ -43,15 +43,18 @@ class Bimbingan extends CI_Controller {
     }
 
     function bimbingan_mhs(){
-        $x['title'] = "Pilih Mahasiswa Bimbingan"; 
-        $npm = $this->input->post('npm');
-        $this->session->set_userdata('set_npm',$npm);
-        $this->load->model('M_bimbingan');
-        $data_bimbingan['data_bimbingan'] = $this->M_bimbingan->lihat_bimbingan_mhs($npm);
-        $this->session->set_userdata('menu','menu_bimbingan');
-		$this->load->view('dosen/header',$x);
-		$this->load->view('dosen/bimbingan',$data_bimbingan);
-		$this->load->view('dosen/footer');
+            $this->session->set_userdata('status_bimbingan','0');
+            $x['title'] = "Bimbingan Mahasiswa"; 
+            $npm = $this->input->post('npm');
+            $nama = $this->input->post('nama');
+            $this->session->set_userdata('set_npm',$npm);
+            $this->session->set_userdata('set_nama',$nama);
+            $this->load->model('M_bimbingan');
+            $data_bimbingan['data_bimbingan'] = $this->M_bimbingan->lihat_bimbingan_mhs($npm);
+            $this->session->set_userdata('menu','menu_bimbingan');
+            $this->load->view('dosen/header',$x);
+            $this->load->view('dosen/bimbingan',$data_bimbingan);
+            $this->load->view('dosen/footer');
     }
 
     function tambah_bimbingan(){

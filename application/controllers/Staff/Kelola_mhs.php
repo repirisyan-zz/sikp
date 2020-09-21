@@ -22,13 +22,7 @@ class Kelola_mhs extends CI_Controller {
 		}else{
 			$x['title'] = "Kelola Mahasiswa";
 			$this->session->set_userdata('menu','menu_kelola_mhs');
-			$jumlah_data = $this->M_staff->kelola_mhs()->num_rows();
-			$config['base_url'] = base_url('Staff/Kelola_mhs');
-			$config['total_rows'] = $jumlah_data;
-			$config['per_page'] = 3;
-			$from = $this->uri->segment(3);
-			$this->pagination->initialize($config);
-			$data_mhs['data_mhs'] = $this->M_staff->kelola_mhs($config['per_page'],$from);
+			$data_mhs['data_mhs'] = $this->M_staff->kelola_mhs();
 			$this->load->view('staff/header',$x);
 			$this->load->view('staff/kelola_mhs',$data_mhs);
 			$this->load->view('staff/footer');

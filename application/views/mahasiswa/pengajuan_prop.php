@@ -7,13 +7,11 @@
                 <div class="card-header">
                 </div>
                 <div class="card-body">
-                    <div class="col-md-9">
-                        <button class="btn btn-primary" id="ajukan_prop" data-toggle="modal"
-                            data-target="#ajukanProp">PROPOSAL
-                            <i class="now-ui-icons ui-1_simple-add" ></i></button>
-                    </div>
+                    <button class="btn btn-primary" id="ajukan_prop" data-toggle="modal"
+                        data-target="#ajukanProp">Proposal
+                        <i class="now-ui-icons ui-1_simple-add"></i></button>
                     <div class="table-responsive">
-                        <table class="table">
+                        <table class="table nowrap" id="myTable" style="width: 100%;">
                             <caption>Daftar Pengajuan Proposal</caption>
                             <thead class="text-primary">
                                 <th>
@@ -95,7 +93,7 @@
         <div class="modal-content">
             <div class="modal-body">
                 <div class="container">
-                    <h5 class="text-center">Upload Berkas</h5>
+                    <h5 class="text-center font-weight-bold">Upload Berkas</h5>
                     <br>
                     <?php echo form_open_multipart('Mahasiswa/Pengajuan_prop/upload','class="form_login"');?>
                     <div class="form-group row">
@@ -110,8 +108,10 @@
                                 <input type="file" name="proposal" class="custom-file-input" id="validatedCustomFile"
                                     required>
                                 <label class="custom-file-label" for="validatedCustomFile">Pilih berkas
-                                    proposal...</label>
+                                    proposal...</label><br><br>
+                                <small class="text-muted">File docx|pdf</small>
                             </div>
+
                         </div>
                     </div>
                     <button type="submit" class="btn btn-success float-right">Unggah <i

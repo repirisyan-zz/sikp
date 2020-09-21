@@ -22,6 +22,7 @@
 
                                 <?php echo form_open('Dosen/Bimbingan/bimbingan_mhs','class="form_login"');?>
                                 <input type="text" name="npm" value="<?=$npm?>" hidden>
+                                <input type="text" name="nama" value="<?=$nama?>" hidden>
                                 <button type="submit" class="btn btn-primary btn-block">Bimbingan <i
                                         class="now-ui-icons gestures_tap-01"></i></button>
                                 </form>

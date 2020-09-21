@@ -5,11 +5,12 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
+                    <h5><span class="badge badge-primary"><i class="now-ui-icons ui-1_calendar-60"></i> Jadwal Seminar</span></h5>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
-                        <table class="display nowrap" id="myTable" style="width: 100%;">
-                        <caption>Daftar Mahasiswa Bisa Seminar</caption>
+                        <table class="table nowrap" id="myTable" style="width: 100%;">
+                            <caption>Daftar Mahasiswa Bisa Seminar</caption>
                             <thead class="text-primary">
                                 <th>
                                     NPM
@@ -123,7 +124,7 @@
                     <div class="col-sm-8">
                         <select name="nama_penguji" class="form-control" required>
                             <?php foreach($data_penguji as $q => $value){?>
-                                <option><?php echo $value['nama_dosen']?></option>
+                            <option><?php echo $value['nama_dosen']?></option>
                             <?php } ?>
                         </select>
                     </div>
@@ -136,11 +137,11 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
-                <button type="submit" class="btn btn-success">Simpan</button>
+                <button type="button" class="cancel btn btn-secondary" data-dismiss="modal">Batal</button>
+                <button type="submit" class="save btn btn-success">Simpan</button>
             </div>
             </form>
         </div>
     </div>
 </div>
-                            <?php endforeach;?>
+<?php endforeach;?>

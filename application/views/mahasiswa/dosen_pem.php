@@ -16,8 +16,7 @@
                             alt="Foto Profile Dosen">
                         <div class="card-body">
                             <h5 class="card-title"><?=$nama?></h5>
-                            <small>NIP : <?=$nip?></small>
-                            <small>Ketersediaan : <?=$batas?></small>
+                            <p class="font-weight-bold">Ketersediaan : <?=$batas?></p>
                             <?php echo form_open('Mahasiswa/Dosen_pem/pilih_dosen','class="form_login"');?>
                             <input type="text" name="nip" value="<?=$nip?>" hidden>
                             <button type="submit" class="btn btn-primary btn-block">Pilih <i

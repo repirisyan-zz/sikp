@@ -32,12 +32,12 @@ class Status_dosen extends CI_Controller {
 	function batas_mhs(){
 		$this->load->model('M_mhs');
 		$batas_mhs = 0;
-		$dosen = $this->M_dos->dosen_pembimbing();
+		$dosen = $this->M_dos->dosen_pembimbing()->num_rows();
 		$mhs = $this->M_mhs->cek_jml_mhs()->num_rows();
-		if($dosen%$mhs == 0){
-			$batas_mhs = $dosen/$mhs; 
+		if($mhs%$dosen == 0){
+			$batas_mhs = $mhs/$dosen; 
 		}else{
-			$batas_mhs = round($dosen/$mhs)+1;
+			$batas_mhs = round($mhs/$dosen)+1;
 		}
 		$cek = $this->M_dos->tambah_batas_mhs($batas_mhs);
 		if($cek == TRUE){

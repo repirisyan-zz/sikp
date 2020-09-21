@@ -1,10 +1,9 @@
 <footer class="footer">
     <div class=" container-fluid ">
-        <div class="copyright" id="copyright">
-            &copy; FTUNSUR <script>
+    <div class="copyright" id="copyright">
+            &copy; <script>
             document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))
-            </script>, Designed by <a href="https://www.invisionapp.com" target="_blank">Invision</a>. Coded by <a
-                href="https://www.creative-tim.com" target="_blank">Creative Tim</a>.
+            </script>, Designed by REMARI. Coded by REMARI.
         </div>
     </div>
 </footer>
@@ -21,6 +20,8 @@
 <script src="<?=base_url('assets/admin/js/plugins/bootstrap-notify.js')?>"></script>
 <!-- Control Center for Now Ui Dashboard: parallax effects, scripts for the example pages etc -->
 <script src="<?=base_url('assets/admin/js/now-ui-dashboard.min.js')?>" type="text/javascript"></script>
+<script src="<?=base_url('assets/admin/js/jquery.dataTables.min.js')?>"></script>
+<script src="<?=base_url('assets/admin/js/datatables.min.js')?>"></script>
 <!-- Now Ui Dashboard DEMO methods, don't include it in your project! -->
 <script src="<?=base_url('assets/admin/demo/demo.js')?>"></script>
 <script src="<?=base_url('assets/admin/js/custom.js')?>"></script>
@@ -31,21 +32,27 @@ $(document).ready(function() {
 
 });
 
-$(document).ready(function(){
-  $("#filterName").on("keyup", function() {
-    let value = $(this).val().toUpperCase();
-    let tr = $("#myTable tr");
-    for (let i = 0; i < tr.length; i++) {
-      if (tr[i].getElementsByTagName("td")[1]) {
-        let textFromValue = tr[i].getElementsByTagName("td")[1].textContent || tr[i].getElementsByTagName("td")[1].innerText;
-        if (textFromValue.toUpperCase().indexOf(value) > -1) {
-          tr[i].style.display = '';
-        } else {
-          tr[i].style.display = 'none';
+$(document).ready( function () {
+$('#myTable').DataTable({
+    "scrollX": true
+});
+});
+$(document).ready(function() {
+    $("#filterName").on("keyup", function() {
+        let value = $(this).val().toUpperCase();
+        let tr = $("#myTable tr");
+        for (let i = 0; i < tr.length; i++) {
+            if (tr[i].getElementsByTagName("td")[1]) {
+                let textFromValue = tr[i].getElementsByTagName("td")[1].textContent || tr[i]
+                    .getElementsByTagName("td")[1].innerText;
+                if (textFromValue.toUpperCase().indexOf(value) > -1) {
+                    tr[i].style.display = '';
+                } else {
+                    tr[i].style.display = 'none';
+                }
+            }
         }
-      }
-    }
-  });
+    });
 });
 
 // $(document).ready(function(){
@@ -56,6 +63,11 @@ $(document).ready(function(){
 //     });
 //   });
 // });
+function upperCaseF(a) {
+    setTimeout(function() {
+        a.value = a.value.toUpperCase();
+    }, 1);
+}
 
 $(document).ready(function() {
 
@@ -78,6 +90,7 @@ $(document).ready(function() {
     var selesai_sidang = '<?php echo $this->session->flashdata('selesai_sidang')?>';
     notif_selesai_sidang(selesai_sidang);
 });
+
 </script>
 </body>
 

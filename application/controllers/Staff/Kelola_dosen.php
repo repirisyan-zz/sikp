@@ -56,13 +56,7 @@ class Kelola_dosen extends CI_Controller
 					'status_aktif' => '0',
 					'sampul' => $sampul
 				);
-				$data1 = array(
-					'nip' =>$nip,
-					'nama_penguji' => $nama,
-					'status_menguji' => '1'
-				);
 				$this->M_staff->tambah_dosen($data);
-				$this->M_staff->tambah_penguji($data1);
 				$this->session->set_flashdata('kelola','tambah');
 				redirect(base_url('Staff/Kelola_dosen'));
 			}	

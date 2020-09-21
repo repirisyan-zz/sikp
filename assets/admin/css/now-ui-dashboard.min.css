@@ -1245,8 +1245,9 @@ fieldset[disabled] [class*=btn-outline-]:hover {
 
 .form-control:focus {
     border: 1px solid #19B5FE;
+    -webkit-box-shadow: none;
     box-shadow: none;
-    outline: 0!important;
+    outline: 1!important;
     color: #2c2c2c
 }
 

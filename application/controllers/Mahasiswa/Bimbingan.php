@@ -36,8 +36,8 @@ class Bimbingan extends CI_Controller {
             $config['max_size']             = 0;
         
             $this->upload->initialize($config);
-
-            if ( ! $this->upload->do_upload('file'))
+            $pembahasan = $this->input->post('pembahasan');
+            if ( ! $this->upload->do_upload('file') || $pembahasan == null)
             {
                 $this->session->set_flashdata('kirim_bimbingan','false');
                 redirect('Mahasiswa/Bimbingan');
@@ -50,7 +50,6 @@ class Bimbingan extends CI_Controller {
                     $nip ='';
                     foreach($n as $i){$nip = $i->nip;}
                     $data = array('upload_data' => $this->upload->data());
-                    $pembahasan = $this->input->post('pembahasan');
                     $tanggal = date("Y-m-d");
                     $filename = $data["upload_data"]["file_name"];
                     $data = array(

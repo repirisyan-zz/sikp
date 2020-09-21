@@ -5,11 +5,12 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
+                    <h5><span class="badge badge-primary"><i class="now-ui-icons ui-1_calendar-60"></i> Jadwal Menguji</span></h5>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
-                        <table class="table" style="width: 100%;">
-                        <caption>Daftar Jadwal Menguji</caption>
+                        <table class="table nowrap" id="myTable" style="width: 100%;">
+                            <caption>Daftar Jadwal Menguji</caption>
                             <thead class="text-primary">
                                 <th>
                                     NPM
@@ -37,7 +38,7 @@
                                         <?=$npm?>
                                     </td>
                                     <td>
-                                       <?=$nama?>
+                                        <?=$nama?>
                                     </td>
                                     <td>
                                         <?=$judul?>

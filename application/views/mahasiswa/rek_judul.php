@@ -5,11 +5,12 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
+                    <h5><span class="badge badge-primary"><i class="now-ui-icons files_single-copy-04"></i> Daftar Rekomendasi Judul</span></h5>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
-                        <table class="table" style="width: 100%;">
-                        <caption>Daftar Rekomendasi Judul</caption>
+                        <table class="table nowrap" id="myTable" style="width: 100%;">
+                            <caption>Daftar Rekomendasi Judul</caption>
                             <thead class="text-primary">
                                 <th>
                                     Dosen Pembimbing
@@ -45,7 +46,7 @@
                                     </td>
                                     <td>
                                         <?php echo form_open('Mahasiswa/Rek_judul/pilih_judul','class="form_login"');?>
-                                        <input type="text" value="<?php echo $id?>" name="id"  hidden>
+                                        <input type="text" value="<?php echo $id?>" name="id" hidden>
                                         <button type="submit" class="btn btn-success"><i
                                                 class="now-ui-icons ui-1_check"></i> Pilih</button>
                                         </form>

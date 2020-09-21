@@ -10,7 +10,7 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">
-                <h5 class="title text-primary"><i class="now-ui-icons ui-1_lock-circle-open"></i> Kata Sandi</h5>
+                    <h5 class="title text-primary"><i class="now-ui-icons ui-1_lock-circle-open"></i> Kata Sandi</h5>
                 </div>
                 <div class="card-body">
                     <?php echo form_open('Staff/Profile/ubah_password','class="form_login"');?>
@@ -50,7 +50,8 @@
                                 font-size: 16px;
                                 border: none;
                                 cursor: pointer;
-                                border-radius: 5px;" hidden id="btn_sampul"><i class="now-ui-icons media-1_camera-compact"></i>
+                                border-radius: 5px;" hidden id="btn_sampul"><i
+                            class="now-ui-icons media-1_camera-compact"></i>
                         Sampul</button>
                 </div>
                 <div class="card-body">
@@ -69,7 +70,8 @@
                                 font-size: 16px;
                                 border: none;
                                 cursor: pointer;
-                                border-radius: 5px;" hidden id="btn_upload"><i class="now-ui-icons media-1_camera-compact"></i></button>
+                                border-radius: 5px;" hidden id="btn_upload"><i
+                                        class="now-ui-icons media-1_camera-compact"></i></button>
                             </div>
                             <h5 class="title"><?php echo $nama?></h5>
                         </span>
@@ -93,22 +95,24 @@
                 </button>
             </div>
             <div class="modal-body">
-                <?php echo form_open_multipart('Staff/Profile/upload_foto','class="form_login"');?>
-                <div class="form-group row">
-                    <label for="inputPassword" class="col-sm-4 col-form-label">Foto</label>
-                    <div class="col-sm-8">
-                        <div class="custom-file mb-3">
-                            <input type="file" name="foto_profile" class="custom-file-input" id="validatedCustomFile"
-                                required>
-                            <label class="custom-file-label" for="validatedCustomFile">Pilih foto JPG</label>
-                            <div class="invalid-feedback">Example invalid custom file feedback</div>
+                <div class="container">
+                    <?php echo form_open_multipart('Staff/Profile/upload_foto','class="form_login"');?>
+                    <div class="form-group row">
+                        <label for="inputPassword" class="col-sm-2 col-form-label">Foto</label>
+                        <div class="col-sm-8">
+                            <div class="custom-file mb-3">
+                                <input type="file" name="foto_profile" class="custom-file-input"
+                                    id="validatedCustomFile" required>
+                                <label class="custom-file-label" for="validatedCustomFile">Pilih foto JPG</label>
+                                <div class="invalid-feedback">Example invalid custom file feedback</div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
-                <button type="submit" class="btn btn-success">Simpan</button>
+                <button type="button" class="cancel btn btn-secondary" data-dismiss="modal">Batal&nbsp;</button>
+                <button type="submit" class="save btn btn-success">Simpan&nbsp;</button>
                 </form>
             </div>
         </div>
@@ -127,22 +131,24 @@
                 </button>
             </div>
             <div class="modal-body">
-                <?php echo form_open_multipart('Staff/Profile/upload_sampul','class="form_login"');?>
-                <div class="form-group row">
-                    <label for="inputPassword" class="col-sm-4 col-form-label">Sampul Foto</label>
-                    <div class="col-sm-8">
-                        <div class="custom-file mb-3">
-                            <input type="file" name="foto_sampul" class="custom-file-input1" id="validatedCustomFile1"
-                                required>
-                            <label class="custom-file-label" for="validatedCustomFile1">Pilih foto JPG</label>
-                            <div class="invalid-feedback">Example invalid custom file feedback</div>
+                <div class="container">
+                    <?php echo form_open_multipart('Staff/Profile/upload_sampul','class="form_login"');?>
+                    <div class="form-group row">
+                        <label for="inputPassword" class="col-sm-3 col-form-label">Sampul Foto</label>
+                        <div class="col-sm-8">
+                            <div class="custom-file mb-3">
+                                <input type="file" name="foto_sampul" class="custom-file-input1"
+                                    id="validatedCustomFile1" required>
+                                <label class="custom-file-label" for="validatedCustomFile1">Pilih foto JPG</label>
+                                <div class="invalid-feedback">Example invalid custom file feedback</div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
-                <button type="submit" class="btn btn-success">Simpan</button>
+                <button type="button" class="cancel btn btn-secondary" data-dismiss="modal">Batal&nbsp;</button>
+                <button type="submit" class="save btn btn-success">Simpan&nbsp;</button>
                 </form>
             </div>
         </div>

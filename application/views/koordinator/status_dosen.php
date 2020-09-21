@@ -5,15 +5,16 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <a href="<?=base_url('Koordinator/Dosen_pem/batas_mhs')?>" class="btn btn-primary title"
-                        data-toggle='tooltip' data-placement='right' title='Digunakan untuk membatasi jumlah bimbingan dosen'><i
+                    <a href="<?=base_url('Koordinator/Status_dosen/batas_mhs')?>" class="btn btn-primary title"
+                        data-toggle='tooltip' data-placement='right'
+                        title='Digunakan untuk membatasi jumlah bimbingan dosen'><i
                             class="now-ui-icons ui-2_settings-90"></i> Kalkulasi</a>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
-                        <table class="table" style="width: 100%;">
-                        <caption>Daftar Dosen</caption>
-                            <thead class="text-primary title">
+                        <table class="table nowrap" id="myTable" style="width: 100%;">
+                            <caption>Daftar Dosen</caption>
+                            <thead class="text-primary">
                                 <th>
                                     NIP
                                 </th>

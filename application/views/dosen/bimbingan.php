@@ -5,7 +5,8 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="card-title">Data Bimbingan</h4>
+                    <h5><span class="badge badge-primary"><i class="now-ui-icons files_single-copy-04"></i> Bimbingan
+                            Mahasiswa <?=$this->session->userdata('set_nama')?></span></h5>
                 </div>
                 <div class="card-body">
                     <button class="btn btn-primary" id="bimbingan" data-toggle="modal"
@@ -15,7 +16,7 @@
                             class="now-ui-icons ui-1_check"></i></button>
                     <div class="table-responsive">
                         <span class="badge" id="badge_bim_mhs"></span><br>
-                        <table class="table" id="myTable" style="width: 100%;">
+                        <table class="table nowrap" id="myTable" style="width: 100%;">
                             <thead class="text-primary">
                                 <th>
                                     Tanggal
@@ -77,70 +78,81 @@
     </div>
 </div>
 
-<!-- Modal Pengajuan Proposal-->
+<!-- Modal Upload Bimbingan-->
 <div class="modal fade" id="tambah_bimbingan" data-backdrop="static" data-keyboard="false" tabindex="-1"
     aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="staticBackdropLabel">Tambah Data Bimbingan</h5>
+                <h5 class="modal-title font-weight-bold" id="staticBackdropLabel">Tambah Data Bimbingan</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
-                <?php echo form_open_multipart('Dosen/Bimbingan/tambah_bimbingan','class="form_login"');?>
-                <div class="form-group row">
-                    <label class="col-sm-4 col-form-label">NPM Mahasiswa</label>
-                    <div class="col-sm-8">
-                        <input type="text" class="form-control" name="npm"
-                            value="<?=$this->session->userdata('set_npm')?>" maxlength="20" readonly required>
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label for="inputPassword" class="col-sm-4 col-form-label">Pembahasan</label>
-                    <div class="col-sm-5">
-                        <select class="form-control" name="pembahasan">
-                            <option selected disabled>Pilih pembahasan...</option>
-                            <option>BAB I</option>
-                            <option>BAB II</option>
-                            <option>BAB III</option>
-                            <option>BAB IV</option>
-                            <option>BAB V</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label for="inputPassword" class="col-sm-4 col-form-label">Tanggal</label>
-                    <div class="col-sm-5">
-                        <input type="date" class="form-control" name="tanggal" required>
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label for="inputPassword" class="col-sm-4 col-form-label">Berkas Mahasiswa</label>
-                    <div class="col-sm-8">
-                        <div class="custom-file mb-3">
-                            <input type="file" name="file" class="custom-file-input" id="validatedCustomFile">
-                            <label class="custom-file-label" for="validatedCustomFile">Pilih berkas...</label>
-                            <div class="invalid-feedback">Example invalid custom file feedback</div>
+                <div class="container">
+                    <?php echo form_open_multipart('Dosen/Bimbingan/tambah_bimbingan','class="form_login"');?>
+                    <div class="form-group row">
+                        <label class="col-sm-4 col-form-label">NPM</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" name="npm"
+                                value="<?=$this->session->userdata('set_npm')?>" maxlength="20" readonly required>
                         </div>
                     </div>
-                </div>
-                <div class="form-group row">
-                    <label for="inputPassword" class="col-sm-4 col-form-label">Keterangan</label>
-                    <div class="col-sm-8">
-                        <textarea name="keterangan" cols="40" rows="6" class="form-conrtol"></textarea>
+                    <div class="form-group row">
+                        <label class="col-sm-4 col-form-label">Nama</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" name="nama"
+                                value="<?=$this->session->userdata('set_nama')?>"readonly>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputPassword" class="col-sm-4 col-form-label">Pembahasan</label>
+                        <div class="col-sm-5">
+                            <select class="form-control" name="pembahasan">
+                                <option selected disabled>Pilih pembahasan...</option>
+                                <option>BAB I</option>
+                                <option>BAB II</option>
+                                <option>BAB III</option>
+                                <option>BAB IV</option>
+                                <option>BAB V</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputPassword" class="col-sm-4 col-form-label">Tanggal</label>
+                        <div class="col-sm-5">
+                            <input type="date" class="form-control" name="tanggal" required>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputPassword" class="col-sm-4 col-form-label">Berkas Mahasiswa</label>
+                        <div class="col-sm-8">
+                            <div class="custom-file mb-3">
+                                <input type="file" name="file" class="custom-file-input" id="validatedCustomFile">
+                                <label class="custom-file-label" for="validatedCustomFile">Pilih berkas...</label>
+                                <div class="invalid-feedback">Example invalid custom file feedback</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputPassword" class="col-sm-4 col-form-label">Keterangan</label>
+                        <div class="col-sm-8">
+                            <textarea name="keterangan" cols="40" rows="6" class="form-control"></textarea>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
-                <button type="submit" class="btn btn-success">KIRIM</button>
+                <button type="button" class="cancel btn btn-secondary" data-dismiss="modal">Batal&nbsp;</button>
+                <button type="submit" class="save btn btn-success">Kirim&nbsp;</button>
                 </form>
             </div>
         </div>
     </div>
 </div>
+
+<!--Modal Upload Revisi !-->
 <?php
     foreach($data_bimbingan->result_array() as $i):
     $id = $i['id'];
@@ -150,35 +162,38 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="staticBackdropLabel">Upload Berkas Revisi</h5>
+                <h5 class="modal-title font-weight-bold" id="staticBackdropLabel">Upload Berkas Revisi</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
-                <?php echo form_open_multipart('Dosen/Bimbingan/upload_revisi','class="form_login"');?>
-                <div class="form-group row">
-                    <label for="inputPassword" class="col-sm-4 col-form-label">Berkas Revisi</label>
-                    <div class="col-sm-8">
-                        <div class="custom-file mb-3">
-                            <input type="text" name="id" value="<?=$id?>" hidden>
-                            <input type="file" name="file" class="custom-file-input1" id="validatedCustomFile1"
-                                required>
-                            <label class="custom-file-label" for="validatedCustomFile1">Pilih berkas...</label>
-                            <div class="invalid-feedback">Example invalid custom file feedback</div>
+                <div class="container">
+                    <?php echo form_open_multipart('Dosen/Bimbingan/upload_revisi','class="form_login"');?>
+                    <div class="form-group row">
+                        <label for="inputPassword" class="col-sm-4 col-form-label">Berkas Revisi</label>
+                        <div class="col-sm-8">
+                            <div class="custom-file mb-3">
+                                <input type="text" name="id" value="<?=$id?>" hidden>
+                                <input type="file" name="file" class="custom-file-input1 form-control" id="validatedCustomFile1"
+                                    required>
+                                <label class="custom-file-label" for="validatedCustomFile1">Pilih berkas...</label>
+                                <br><br>
+                                <small class="text-muted">File docx|pdf</small>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="form-group row">
-                    <label for="inputPassword" class="col-sm-4 col-form-label">Keterangan</label>
-                    <div class="col-sm-8">
-                        <textarea name="keterangan" cols="40" rows="6" class="form-conrtol"></textarea>
+                    <div class="form-group row">
+                        <label for="inputPassword" class="col-sm-4 col-form-label">Keterangan</label>
+                        <div class="col-sm-8">
+                            <textarea name="keterangan" cols="40" rows="6" class="form-control"></textarea>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
-                <button type="submit" class="btn btn-success">Kirim</button>
+                <button type="button" class="cancel btn btn-secondary" data-dismiss="modal">Batal&nbsp;</button>
+                <button type="submit" class="save btn btn-success">Kirim&nbsp;</button>
                 </form>
             </div>
         </div>

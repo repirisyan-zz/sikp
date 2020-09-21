@@ -18,7 +18,8 @@
             echo form_error('password',"<i class=\"far fa-times-circle\"></i> &nbsp;");?></small>
                     </div>
                     <button type="submit" class="btn btn-primary btn-block">Login</button>
-                    <small style="color: red;"><?php echo $this->session->flahsdata('login')?></small>
+                    <small style="color: red;"><?php echo $this->session->flashdata('login')?></small>
+                    <br>
                     <small><a href="<?=base_url('Landing')?>" class="text-decoration-none"><i class="fa fa-home"></i>
                             Kembali ke
                             beranda</a></small>

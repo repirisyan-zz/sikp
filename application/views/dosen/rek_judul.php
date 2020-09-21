@@ -4,15 +4,12 @@
     <div class="row">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">
-                </div>
                 <div class="card-body">
-                    <button class="btn btn-primary" data-toggle="modal" data-target="#ajukanJudul">REKOMENDASI JUDUL
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#ajukanJudul">Rekomendasi Judul
                         <i class="now-ui-icons ui-1_simple-add"></i></button>
                     <div class="table-responsive">
-                        <span class="badge" id="badge_judul"></span><br>
-                        <table class="table" style="width: 100%;">
-                        <caption>Daftar Rekomendasi Judul</caption>
+                        <table class="table nowrap" id="myTable" style="width: 100%;">
+                            <caption>Daftar Rekomendasi Judul</caption>
                             <thead class="text-primary">
                                 <th>
                                     Judul
@@ -64,34 +61,36 @@
 </div>
 
 <!-- Modal Rekomendasi Judul-->
-<div class="modal fade" id="ajukanJudul" data-keyboard="false" tabindex="-1"
-    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal fade" id="ajukanJudul" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel"
+    aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="staticBackdropLabel">Rekomendasi Judul</h5>
+                <h5 class="modal-title font-weight-bold" id="staticBackdropLabel">Rekomendasi Judul</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
-                <?php echo form_open_multipart('Dosen/Rek_judul/tambah_judul','class="form_login"');?>
-                <div class="form-group row">
-                    <label class="col-sm-4 col-form-label">Judul</label>
-                    <div class="col-sm-8">
-                        <input type="text" class="form-control" name="judul" required maxlength="255">
+                <div class="container">
+                    <?php echo form_open_multipart('Dosen/Rek_judul/tambah_judul','class="form_login"');?>
+                    <div class="form-group row">
+                        <label class="col-sm-4 col-form-label">Judul</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" name="judul" required maxlength="255">
+                        </div>
                     </div>
-                </div>
-                <div class="form-group row">
-                    <label class="col-sm-4 col-form-label">Keterangan</label>
-                    <div class="col-sm-8">
-                        <textarea name="keterangan" class="form-control" cols="35" rows="10"></textarea>
+                    <div class="form-group row">
+                        <label class="col-sm-4 col-form-label">Keterangan</label>
+                        <div class="col-sm-8">
+                            <textarea name="keterangan" class="form-control" cols="35" rows="10"></textarea>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
-                <button type="submit" class="btn btn-success">Simpan</button>
+                <button type="button" class="cancel btn btn-secondary" data-dismiss="modal">Batal&nbsp;</button>
+                <button type="submit" class="save btn btn-success">Simpan&nbsp;</button>
                 </form>
             </div>
         </div>
@@ -105,36 +104,39 @@
     $judul = $i['judul'];
     $keterangan = $i['keterangan'];
 ?>
-<div class="modal fade" id="ubahJudul<?=$id?>"  data-keyboard="false" tabindex="-1"
-    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal fade" id="ubahJudul<?=$id?>" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel"
+    aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="staticBackdropLabel">Rekomendasi Judul</h5>
+                <h5 class="modal-title font-weight-bold" id="staticBackdropLabel">Rekomendasi Judul</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
-                <?php echo form_open_multipart('Dosen/Rek_judul/ubah_judul','class="form_login"');?>
-                <div class="form-group row">
-                    <label class="col-sm-4 col-form-label">Judul</label>
-                    <div class="col-sm-8">
-                        <input type="text" class="form-control" name="id" value="<?=$id?>" hidden>
-                        <input type="text" class="form-control" name="judul" value="<?=$judul?>" required
-                            maxlength="255">
+                <div class="container">
+                    <?php echo form_open_multipart('Dosen/Rek_judul/ubah_judul','class="form_login"');?>
+                    <div class="form-group row">
+                        <label class="col-sm-4 col-form-label">Judul</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" name="id" value="<?=$id?>" hidden>
+                            <input type="text" class="form-control" name="judul" value="<?=$judul?>" required
+                                maxlength="255">
+                        </div>
                     </div>
-                </div>
-                <div class="form-group row">
-                    <label class="col-sm-4 col-form-label">Keterangan</label>
-                    <div class="col-sm-8">
-                        <textarea name="keterangan" class="form-control" cols="35" rows="10"><?=$keterangan?></textarea>
+                    <div class="form-group row">
+                        <label class="col-sm-4 col-form-label">Keterangan</label>
+                        <div class="col-sm-8">
+                            <textarea name="keterangan" class="form-control" cols="35"
+                                rows="10"><?=$keterangan?></textarea>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
-                <button type="submit" class="btn btn-warning">Ubah</button>
+                <button type="button" class="cancel btn btn-secondary" data-dismiss="modal">Batal&nbsp;</button>
+                <button type="submit" class="save btn btn-warning">Ubah&nbsp;</button>
                 </form>
             </div>
         </div>
@@ -159,13 +161,15 @@
                 </button>
             </div>
             <div class="modal-body">
-                <?php echo form_open_multipart('Dosen/Rek_judul/hapus_judul','class="form_login"');?>
-                <p>Anda yakin akan menghapus rekomendasi judul <strong><?=$judul?></strong> ?</p>
+                <div class="container">
+                    <?php echo form_open_multipart('Dosen/Rek_judul/hapus_judul','class="form_login"');?>
+                    <p>Anda yakin akan menghapus rekomendasi judul <strong><?=$judul?></strong> ?</p>
+                </div>
                 <input type="text" class="form-control" name="id" value="<?=$id?>" hidden required maxlength="255">
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
-                <button type="submit" class="btn btn-danger">Hapus</button>
+                <button type="button" class="cancel btn btn-secondary" data-dismiss="modal">Batal&nbsp;</button>
+                <button type="submit" class="save btn btn-danger">Hapus&nbsp;</button>
                 </form>
             </div>
         </div>

@@ -1,10 +1,9 @@
 <footer class="footer">
     <div class=" container-fluid ">
-        <div class="copyright" id="copyright">
+    <div class="copyright" id="copyright">
             &copy; <script>
             document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))
-            </script>, Designed by <a href="https://www.invisionapp.com" target="_blank">Invision</a>. Coded by <a
-                href="https://www.creative-tim.com" target="_blank">Creative Tim</a>.
+            </script>, Designed by REMARI. Coded by REMARI.
         </div>
     </div>
 </footer>
@@ -21,6 +20,8 @@
 <script src="<?=base_url('assets/admin/js/plugins/bootstrap-notify.js')?>"></script>
 <!-- Control Center for Now Ui Dashboard: parallax effects, scripts for the example pages etc -->
 <script src="<?=base_url('assets/admin/js/now-ui-dashboard.min.js')?>" type="text/javascript"></script>
+<script src="<?=base_url('assets/admin/js/jquery.dataTables.min.js')?>"></script>
+<script src="<?=base_url('assets/admin/js/datatables.min.js')?>"></script>
 <!-- Now Ui Dashboard DEMO methods, don't include it in your project! -->
 <script src="<?=base_url('assets/admin/demo/demo.js')?>" type="text/javascript"></script>
 <script src="<?=base_url('assets/admin/js/custom.js')?>"></script>
@@ -30,7 +31,11 @@ $(document).ready(function() {
     demo.initDashboardPageCharts();
 
 });
-
+$(document).ready( function () {
+$('#myTable').DataTable({
+    "scrollX": true
+});
+});
 $(document).ready(function() {
     var menu = '<?php echo $this->session->userdata('menu')?>';
     menu_mahasiswa(menu);
@@ -52,8 +57,8 @@ $(document).ready(function() {
     var location1 = '<?=base_url('Mahasiswa/Rek_judul/judul_dipilih')?>';
     status_recjudul(rec_judul,location1);
 
-    var bimbingan_mhs = '<?php echo $this->session->flashdata('kirim_bimbingan')?>';
-    bimbingan_mhs(bimbingan_mhs);
+    var bbm_mhs = '<?php echo $this->session->flashdata('kirim_bimbingan')?>';
+    bimbingan_mhs(bbm_mhs);
 
     var prop = '<?php echo $this->session->flashdata('pengajuan_prop')?>';
     pengajuan_prop(prop);

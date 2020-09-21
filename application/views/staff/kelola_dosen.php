@@ -10,8 +10,8 @@
                     <button class="btn btn-primary" data-toggle="modal" data-target="#tambahDosen">Tambah Data
                         <i class="now-ui-icons ui-1_simple-add"></i></button>
                     <div class="table-responsive">
-                        <table class="table" style="width: 100%;">
-                        <caption>Daftar Dosen</caption>
+                        <table class="table" id="myTable" style="width: 100%;">
+                            <caption>Daftar Dosen</caption>
                             <thead class="text-primary">
                                 <th>
                                     NIP
@@ -61,23 +61,25 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="staticBackdropLabel">Tambah Data Dosen</h5>
+                <h5 class="modal-title font-weight-bold" id="staticBackdropLabel">Tambah Data Dosen</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
-                <?php echo form_open('Staff/Kelola_dosen/tambah_dosen','class="form_login"');?>
-                <div class="form-group row">
-                    <label for="colFormLabelSm" class="col-sm-2 col-form-label">NIP</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" name="nip" maxlength="20" required>
+                <div class="container">
+                    <?php echo form_open('Staff/Kelola_dosen/tambah_dosen','class="form_login"');?>
+                    <div class="form-group row">
+                        <label for="colFormLabelSm" class="col-sm-2 col-form-label">NIP</label>
+                        <div class="col-sm-10">
+                            <input type="number" class="form-control" name="nip" maxlength="20" required>
+                        </div>
                     </div>
-                </div>
-                <div class="form-group row">
-                    <label for="exampleInputPassword1" class="col-sm-2 col-form-label">Nama</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" name="nama" maxlength="255" required>
+                    <div class="form-group row">
+                        <label for="exampleInputPassword1" class="col-sm-2 col-form-label">Nama</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control"  onkeydown="upperCaseF(this)" name="nama" maxlength="255" required>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -101,25 +103,27 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="staticBackdropLabel">Ubah Data Dosen</h5>
+                <h5 class="modal-title font-weight-bold" id="staticBackdropLabel">Ubah Data Dosen</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
-                <?php echo form_open('Staff/Kelola_dosen/ubah_dosen','class="form_login"');?>
-                <div class="form-group row">
-                    <label for="colFormLabelSm" class="col-sm-2 col-form-label">NIP</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" readonly name="nip" value="<?php echo $nip?>"
-                            maxlength="20" required>
+                <div class="container">
+                    <?php echo form_open('Staff/Kelola_dosen/ubah_dosen','class="form_login"');?>
+                    <div class="form-group row">
+                        <label for="colFormLabelSm" class="col-sm-2 col-form-label">NIP</label>
+                        <div class="col-sm-10">
+                            <input type="number" class="form-control" readonly name="nip" value="<?php echo $nip?>"
+                                maxlength="20" required>
+                        </div>
                     </div>
-                </div>
-                <div class="form-group row">
-                    <label for="exampleInputPassword1" class="col-sm-2 col-form-label">Nama</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" name="nama" value="<?php echo $nama?>" maxlength="255"
-                            required>
+                    <div class="form-group row">
+                        <label for="exampleInputPassword1" class="col-sm-2 col-form-label">Nama</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name="nama"  onkeydown="upperCaseF(this)" value="<?php echo $nama?>"
+                                maxlength="255" required>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -144,7 +148,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Hapus Data Dosen</h5>
+                <h5 class="modal-title font-weight-bold" id="exampleModalLabel">Hapus Data Dosen</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -153,9 +157,10 @@
                 <?php echo form_open('Staff/Kelola_dosen/hapus_dosen','class="form_login"');?>
                 <input type="text" class="form-control" value="<?php echo $nip?>" hidden name="nip" maxlength="20"
                     required>
-                Apakah anda yakin menghapus data Dosen <br>
-                NIP : <strong><?php echo $nip?></strong><br>
-                Nama : <strong><?php echo $nama?></strong>
+                <div class="container">
+                    <p class="font-weight-normal">Apakah anda yakin akan menghapus data dosen
+                        <strong><?php echo $nama?></strong> ?</p>
+                </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="cancel btn btn-secondary" data-dismiss="modal">Batal&nbsp;</button>
