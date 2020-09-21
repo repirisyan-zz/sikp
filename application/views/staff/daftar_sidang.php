@@ -5,11 +5,13 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
+                    <h5><span class="badge badge-primary"><i class="now-ui-icons ui-1_calendar-60"></i> Jadwal
+                            Seminar</span></h5>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
                         <table class="table" id="myTable" style="width: 100%;">
-                        <caption>Daftar Seminar Mahasiswa</caption>
+                            <caption>Daftar Seminar Mahasiswa</caption>
                             <thead class="text-primary">
                                 <th>
                                     NPM
@@ -50,7 +52,8 @@
                                     </td>
                                     <td>
                                         <button class="btn btn-success" data-toggle="modal"
-                                            data-target="#selesaiSidang<?php echo $npm?>">Selesai <i class="now-ui-icons sport_trophy"></i></button>
+                                            data-target="#selesaiSidang<?php echo $npm?>">Selesai <i
+                                                class="now-ui-icons sport_trophy"></i></button>
                                     </td>
                                 </tr>
                                 <?php endforeach?>
@@ -81,7 +84,8 @@
                 <input type="text" value="<?=$npm?>" name="npm" hidden>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal" style="width: 100px;">Tidak</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal"
+                    style="width: 100px;">Tidak</button>
                 <button type="submit" class="btn btn-success" style="width: 100px;">Ya</button>
             </div>
             </form>

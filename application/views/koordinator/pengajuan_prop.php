@@ -33,8 +33,8 @@
                             <td><?=$npm?></td>
                             <td><?=$judul?></td>
                             <td><?=$tanggal?></td>
-                            <td><a href=" <?=base_url('file/proposal/').$file?>" data-toggle="tooltip"
-                                data-placement="top" title="<?=$file?>"><i class="now-ui-icons files_paper"></i>
+                            <td><a href="<?=base_url('file/proposal/').$file?>" data-toggle="tooltip"
+                                data-placement="right" title="<?=$file?>"><i class="now-ui-icons files_paper"></i>
                                 Unduh</a></td>
                             <td><?=$status?></td>
                             <td><button type="button" class="btn btn-success" data-toggle="modal"

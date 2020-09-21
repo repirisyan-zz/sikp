@@ -40,7 +40,8 @@ class Rek_judul extends CI_Controller
 				$nip = $this->session->userdata('username');
 				$this->db->where('nip',$nip);
 				$cek = $this->db->get('dosen');
-				if($cek->batas_judul < 1){
+				foreach($cek->result() as $row){$a = $row->batas_judul;}
+				if($a < 1){
 					$this->session->set_flashdata('rek_judul','tambah_gagal_penuh');
 					redirect(base_url('Dosen/Rek_judul'));
 				}else{

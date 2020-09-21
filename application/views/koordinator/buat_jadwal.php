@@ -5,7 +5,8 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <h5><span class="badge badge-primary"><i class="now-ui-icons ui-1_calendar-60"></i> Jadwal Seminar</span></h5>
+                    <h5><span class="badge badge-primary"><i class="now-ui-icons ui-1_calendar-60"></i> Jadwal
+                            Seminar</span></h5>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
@@ -98,41 +99,43 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="staticBackdropLabel">Pilih Tanggal Sidang</h5>
+                <h5 class="modal-title font-weight-bold" id="staticBackdropLabel">Buat Jadwal</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
-                <?php echo form_open('Koordinator/Jadwal/buat_jadwal','class="form_login"');?>
-                <div class="form-group row">
-                    <label for="colFormLabelSm" class="col-sm-4 col-form-label">NPM</label>
-                    <div class="col-sm-8">
-                        <input type="text" class="form-control" readonly name="npm" value="<?php echo $npm?>"
-                            maxlength="20" required>
+                <div class="container">
+                    <?php echo form_open('Koordinator/Jadwal/buat_jadwal','class="form_login"');?>
+                    <div class="form-group row">
+                        <label for="colFormLabelSm" class="col-sm-4 col-form-label">NPM</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" readonly name="npm" value="<?php echo $npm?>"
+                                maxlength="20" required>
+                        </div>
                     </div>
-                </div>
-                <div class="form-group row">
-                    <label for="exampleInputPassword1" class="col-sm-4 col-form-label">Nama</label>
-                    <div class="col-sm-8">
-                        <input type="text" class="form-control" name="nama" readonly value="<?php echo $nama?>"
-                            maxlength="255" required>
+                    <div class="form-group row">
+                        <label for="exampleInputPassword1" class="col-sm-4 col-form-label">Nama</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" name="nama" readonly value="<?php echo $nama?>"
+                                maxlength="255" required>
+                        </div>
                     </div>
-                </div>
-                <div class="form-group row">
-                    <label for="exampleInputPassword1" class="col-sm-4 col-form-label">Nama Penguji</label>
-                    <div class="col-sm-8">
-                        <select name="nama_penguji" class="form-control" required>
-                            <?php foreach($data_penguji as $q => $value){?>
-                            <option><?php echo $value['nama_dosen']?></option>
-                            <?php } ?>
-                        </select>
+                    <div class="form-group row">
+                        <label for="exampleInputPassword1" class="col-sm-4 col-form-label">Nama Penguji</label>
+                        <div class="col-sm-8">
+                            <select name="nama_penguji" class="form-control" required>
+                                <?php foreach($data_penguji as $q => $value){?>
+                                <option><?php echo $value['nama_dosen']?></option>
+                                <?php } ?>
+                            </select>
+                        </div>
                     </div>
-                </div>
-                <div class="form-group row">
-                    <label for="exampleInputPassword1" class="col-sm-4 col-form-label">Tanggal Sidang</label>
-                    <div class="col-sm-8">
-                        <input type="date" class="form-control" name="tanggal" required>
+                    <div class="form-group row">
+                        <label for="exampleInputPassword1" class="col-sm-4 col-form-label">Tanggal Sidang</label>
+                        <div class="col-sm-8">
+                            <input type="date" class="form-control" name="tanggal" required>
+                        </div>
                     </div>
                 </div>
             </div>

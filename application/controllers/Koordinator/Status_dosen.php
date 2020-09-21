@@ -37,7 +37,7 @@ class Status_dosen extends CI_Controller {
 		if($mhs%$dosen == 0){
 			$batas_mhs = $mhs/$dosen; 
 		}else{
-			$batas_mhs = round($mhs/$dosen)+1;
+			$batas_mhs = floor($mhs/$dosen)+1;
 		}
 		$cek = $this->M_dos->tambah_batas_mhs($batas_mhs);
 		if($cek == TRUE){
