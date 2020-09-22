@@ -1,19 +1,3 @@
-<!--
-
-=========================================================
-* Now UI Dashboard - v1.5.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/now-ui-dashboard
-* Copyright 2019 Creative Tim (http://www.creative-tim.com)
-
-* Designed by www.invisionapp.com Coded by www.creative-tim.com
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
--->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -49,7 +33,7 @@
                     SIKP
                 </a>
                 <a href="#" class="simple-text logo-normal">
-                    V 1.0.0
+                    V 1.0.0 Beta
                 </a>
             </div>
             <div class="sidebar-wrapper" id="sidebar-wrapper">
@@ -84,6 +68,12 @@
                             <p>Jadwal Seminar</p>
                         </a>
                     </li>
+                    <li id="menu_rekomendasi">
+                        <a href="<?=base_url('Koordinator/Rekomendasi_judul')?>">
+                            <i class="now-ui-icons files_single-copy-04"></i>
+                            <p>Rekomendasi Judul</p>
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -107,38 +97,20 @@
                         <span class="navbar-toggler-bar navbar-kebab"></span>
                     </button>
                     <div class="collapse navbar-collapse justify-content-end" id="navigation">
-                        <form>
-                            <div class="input-group no-border">
-                                <input type="text" value="" class="form-control" placeholder="Cari...">
-                                <div class="input-group-append">
-                                    <div class="input-group-text">
-                                        <i class="now-ui-icons ui-1_zoom-bold"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
                         <ul class="navbar-nav">
-                            <li class="nav-item">
-                                <a class="nav-link" href="#pablo">
-                                    <i class="now-ui-icons media-2_sound-wave"></i>
-                                    <p>
-                                        <span class="d-lg-none d-md-block">Stats</span>
-                                    </p>
-                                </a>
-                            </li>
                             <li class="nav-item" id="menu_profile">
                                 <a class="nav-link" href="<?=base_url('Koordinator/Profile')?>">
-                                    <i class="now-ui-icons users_single-02"></i> Profil
+                                    <i class="now-ui-icons users_single-02"></i>&nbsp;Profil
                                     <p>
-                                        <span class="d-lg-none d-md-block">Profile</span>
+                                        <span class="d-lg-none d-md-block"></span>
                                     </p>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="<?=base_url('Koordinator/Koordinator/logout')?>">
-                                    <i class="now-ui-icons sport_user-run"></i> Keluar
+                                    <i class="now-ui-icons sport_user-run"></i>&nbsp;Keluar
                                     <p>
-                                        <span class="d-lg-none d-md-block">Keluar</span>
+                                        <span class="d-lg-none d-md-block"></span>
                                     </p>
                                 </a>
                             </li>

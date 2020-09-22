@@ -1,5 +1,4 @@
-<div class="panel-header panel-header-lg">
-    <canvas id="bigDashboardChart"></canvas>
+<div class="panel-header panel-header-sm">
 </div>
 <div class="content">
     <div class="row">

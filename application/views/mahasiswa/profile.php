@@ -4,6 +4,7 @@
     $sampul = $i['sampul'];
     $foto = $i['foto'];
     $nama = $i['nama'];
+    $npm = $i['npm'];
 ?>
 <div class="content">
     <div class="row">
@@ -73,6 +74,7 @@
                                         class="now-ui-icons media-1_camera-compact"></i></button>
                             </div>
                             <h5 class="title"><?php echo $nama?></h5>
+                            <h6><?php echo $npm?></h6>
                         </span>
                     </div>
                 </div>

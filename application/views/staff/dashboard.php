@@ -1,5 +1,4 @@
-<div class="panel-header panel-header-lg">
-    <canvas id="bigDashboardChart"></canvas>
+<div class="panel-header panel-header-sm">
 </div>
 <div class="content">
     <div class="row">
@@ -59,7 +58,7 @@
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
-                        <table class="table">
+                        <table class="table nowrap" id="myTable" style="width: 100%;">
                             <caption>Daftar Jadwal Seminar Mahasiswa</caption>
                             <thead class=" text-primary">
                                 <th>

@@ -10,7 +10,7 @@ class M_mhs extends CI_Model {
     }
 
     function sidang($npm){
-        $this->db->set('kemajuan','Sidang');
+        $this->db->set('kemajuan','Seminar');
         $this->db->where('npm',$npm);
         $query = $this->db->update('mahasiswa');
         return $query;
@@ -35,7 +35,7 @@ class M_mhs extends CI_Model {
     }
 
     function sidang_mhs($npm){
-        $this->db->where('kemajuan','Sidang');
+        $this->db->where('kemajuan','Seminar');
         $this->db->where('status','Kerja Praktek');
         $this->db->where('tanggal_sidang !=',null);
         $this->db->select('*');
@@ -57,8 +57,15 @@ class M_mhs extends CI_Model {
         return $query->result();
     }
 
+    function rekomendasi_dosen($npm){
+        $this->db->set('rekomendasi_dosen','1');
+        $this->db->where('npm',$npm);
+        $query = $this->db->update('mahasiswa');
+        return $query;
+    }
+
     function sidang_mhs_bim($nip){
-        $this->db->where('kemajuan','Sidang');
+        $this->db->where('kemajuan','Seminar');
         $this->db->where('status','Kerja Praktek');
         $this->db->where('tanggal_sidang !=',null);
         $this->db->select('*');
@@ -86,7 +93,7 @@ class M_mhs extends CI_Model {
     }
 
     function jadwal_sidang_mhs(){
-        $this->db->where('kemajuan','Sidang');
+        $this->db->where('kemajuan','Seminar');
         $this->db->where('status','Kerja Praktek');
         $this->db->where('tanggal_sidang !=',null);
         $this->db->select('*');
@@ -122,7 +129,7 @@ class M_mhs extends CI_Model {
 
     function cek_sidang($npm){
         $this->db->where('npm',$npm);
-        $this->db->where('kemajuan','Sidang');
+        $this->db->where('kemajuan','Seminar');
         $query = $this->db->get('mahasiswa');
         return $query;
     }
@@ -131,7 +138,7 @@ class M_mhs extends CI_Model {
         $this->db->from('mahasiswa');
         $this->db->join('proposal','mahasiswa.npm = proposal.npm');
         $this->db->where('mahasiswa.nama_penguji',$nama_penguji);
-        $this->db->where('mahasiswa.kemajuan','Sidang');
+        $this->db->where('mahasiswa.kemajuan','Seminar');
         $this->db->where('mahasiswa.status','Kerja Praktek');
         $this->db->select('*');
         $query = $this->db->get();
@@ -139,7 +146,7 @@ class M_mhs extends CI_Model {
     }
 
     function mhs_sidang(){
-        $this->db->where('kemajuan','Sidang');
+        $this->db->where('kemajuan','Seminar');
         $this->db->where('tanggal_sidang', null);
         $this->db->select('*');
         $this->db->from('mahasiswa');

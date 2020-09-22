@@ -80,6 +80,9 @@ $(document).ready(function() {
     var status = '<?php echo $this->session->flashdata('kelola')?>';
     notif_kelola(status);
 
+    var hapus_file = '<?php echo $this->session->flashdata('hapus_file')?>';
+    notif_hapus_file(hapus_file);
+
     var upload_foto = '<?php echo $this->session->flashdata('upload_foto')?>';
     notif_upload_foto(upload_foto);
 

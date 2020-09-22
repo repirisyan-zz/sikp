@@ -1,19 +1,3 @@
-<!--
-
-=========================================================
-* Now UI Dashboard - v1.5.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/now-ui-dashboard
-* Copyright 2019 Creative Tim (http://www.creative-tim.com)
-
-* Designed by www.invisionapp.com Coded by www.creative-tim.com
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
--->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -49,7 +33,7 @@
                     SIKP
                 </a>
                 <a href="#" class="simple-text logo-normal">
-                    V 1.0.0
+                    V 1.0.0 Beta
                 </a>
             </div>
             <div class="sidebar-wrapper" id="sidebar-wrapper">
@@ -103,8 +87,14 @@
                     <div class="collapse navbar-collapse justify-content-end" id="navigation">
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <a class="nav-link" href="#pablo">
-                                    <i class="now-ui-icons media-2_sound-wave"></i>
+                                <a class="nav-link" href="#pablo" data-toggle="modal" data-target="#modal_hapus_file">
+                                    <i class="fas fa-broom"></i>&nbsp;<?php 
+                                        $bytes = disk_free_space(".");
+                                        $si_prefix = array( 'B', 'KB', 'MB', 'GB', 'TB', 'EB', 'ZB', 'YB' );
+                                        $base = 1024;
+                                        $class = min((int)log($bytes , $base) , count($si_prefix) - 1);
+                                        echo sprintf('%1.2f' , $bytes / pow($base,$class)) . ' ' . $si_prefix[$class];
+                                        ?>
                                     <p>
                                         <span class="d-lg-none d-md-block">Stats</span>
                                     </p>
@@ -112,17 +102,17 @@
                             </li>
                             <li class="nav-item" id="menu_profile">
                                 <a class="nav-link" href="<?=base_url('Staff/Profile')?>">
-                                    <i class="now-ui-icons users_single-02"></i> Profil
+                                    <i class="now-ui-icons users_single-02"></i>&nbsp;Profil
                                     <p>
-                                        <span class="d-lg-none d-md-block">Profile</span>
+                                        <span class="d-lg-none d-md-block"></span>
                                     </p>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="<?=base_url('Staff/Staff/logout')?>">
-                                    <i class="now-ui-icons sport_user-run"></i> Keluar
+                                    <i class="now-ui-icons sport_user-run"></i>&nbsp;Keluar
                                     <p>
-                                        <span class="d-lg-none d-md-block">Keluar</span>
+                                        <span class="d-lg-none d-md-block"></span>
                                     </p>
                                 </a>
                             </li>
@@ -131,3 +121,29 @@
                 </div>
             </nav>
             <!-- End Navbar -->
+            <!-- Modal -->
+            <div class="modal fade" id="modal_hapus_file" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title font-weight-bold" id="exampleModalLabel">Hapus Berkas <i
+                                    class="fa fa-radiation-alt"></i></h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <strong class="text-danger">Apakah anda yakin akan menghapus seluruh berkas mahasiswa
+                                ?</strong>
+                        </div>
+                        <div class="modal-footer">
+                            <?php echo form_open('Staff/Staff/hapus_file','class="form_login"');?>
+                            <button type="button" class="cancel btn btn-secondary"
+                                data-dismiss="modal">Batal&nbsp;</button>
+                            <button type="submit" class="save btn btn-danger">Hapus&nbsp;</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>

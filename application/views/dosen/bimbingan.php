@@ -103,7 +103,7 @@
                         <label class="col-sm-4 col-form-label">Nama</label>
                         <div class="col-sm-8">
                             <input type="text" class="form-control" name="nama"
-                                value="<?=$this->session->userdata('set_nama')?>"readonly>
+                                value="<?=$this->session->userdata('set_nama')?>" readonly>
                         </div>
                     </div>
                     <div class="form-group row">
@@ -175,8 +175,8 @@
                         <div class="col-sm-8">
                             <div class="custom-file mb-3">
                                 <input type="text" name="id" value="<?=$id?>" hidden>
-                                <input type="file" name="file" class="custom-file-input1 form-control" id="validatedCustomFile1"
-                                    required>
+                                <input type="file" name="file" class="custom-file-input1 form-control"
+                                    id="validatedCustomFile1" required>
                                 <label class="custom-file-label" for="validatedCustomFile1">Pilih berkas...</label>
                                 <br><br>
                                 <small class="text-muted">File docx|pdf</small>
@@ -202,12 +202,12 @@
 <?php endforeach;?>
 
 <!-- Modal Selesai-->
-<div class="modal fade" id="selesai_bimbingan" data-backdrop="static" data-keyboard="false" tabindex="-1"
-    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal fade" id="selesai_bimbingan" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel"
+    aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="staticBackdropLabel"></h5>
+                <h5 class="modal-title font-weight-bold" id="staticBackdropLabel">Konfirmasi Seminar</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -217,12 +217,14 @@
                 <input type="text" name="npm" value="<?php echo $this->session->userdata('set_npm')?>" hidden>
             </div>
             <div class="modal-body">
-                <p class="font-weight-normal">Apakah mahasiswa ini sudah memnuhi syarat untuk sidang ?</p>
+                <div class="container">
+                    <p class="font-weight-normal">Apakah mahasiswa ini memenuhi syarat untuk seminar ?</p>
+                </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-dismiss="modal" style="width: 80px;">Tidak</button>
+                <button type="button" class="cancel btn btn-danger" data-dismiss="modal">Tidak&nbsp;</button>
                 &nbsp;
-                <button type="submit" class="btn btn-success" style="width: 80px;">Ya</button>
+                <button type="submit" class="save btn btn-success">Ya&nbsp;</button>
             </div>
             </form>
         </div>

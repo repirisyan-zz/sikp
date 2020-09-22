@@ -31,19 +31,27 @@ class Profile extends CI_Controller {
 	}
 
 	function ubah_password(){
-        $username = $this->session->userdata('username');
-		$sandi_baru = $this->input->post('sandi_baru');
-		$confirm = $this->input->post('confirm_sandi');
+		$this->form_validation->set_rules('sandi_baru', 'Sandi_baru', 'required');
+        $this->form_validation->set_rules('confirm_sandi', 'Confirm_sandi', 'required');
+                
+            if ($this->form_validation->run() == false) {
+				$this->session->set_flashdata('sandi', 'null');
+                redirect('Staff/Profile');
+            }else{
+				$username = $this->session->userdata('username');
+				$sandi_baru = $this->input->post('sandi_baru');
+				$confirm = $this->input->post('confirm_sandi');
+				
 		
-
-        if ($sandi_baru != $confirm) {
-            $this->session->set_flashdata('sandi', 'false');
-            redirect('Staff/Profile', 'refresh');
-        } else {
-            $this->M_staff->ubah_password(md5($sandi_baru), $username);
-            $this->session->set_flashdata('sandi', 'true');
-            redirect('Staff/Profile', 'refresh');
-        }
+				if ($sandi_baru != $confirm) {
+					$this->session->set_flashdata('sandi', 'false');
+					redirect('Staff/Profile', 'refresh');
+				}else {
+					$this->M_staff->ubah_password(md5($sandi_baru), $username);
+					$this->session->set_flashdata('sandi', 'true');
+					redirect('Staff/Profile', 'refresh');
+				}
+			}
 	}
 	
 	function upload_foto(){

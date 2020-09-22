@@ -55,7 +55,7 @@
                                     </td>
                                     <td>
                                         <a href="<?=base_url('file/proposal/').$file?>" data-toggle="tooltip"
-                                            data-placement="top" title="<?=$file?>"><i
+                                            data-placement="right" title="<?=$file?>"><i
                                                 class="now-ui-icons files_paper"></i>&nbsp;Unduh</a>
                                     </td>
                                     <td>

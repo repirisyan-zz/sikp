@@ -27,6 +27,7 @@
                                                     $tanggal = $b['tanggal_proposal'];
                                                     $file = $b['file'];
                                                     $status = $b['status_proposal'];
+                                                    $rekomendasi = $b['rekomendasi_dosen'];
                                                 ?>
                             <tr>
                             <td><?=$nama?></td>
@@ -35,7 +36,9 @@
                             <td><?=$tanggal?></td>
                             <td><a href="<?=base_url('file/proposal/').$file?>" data-toggle="tooltip"
                                 data-placement="right" title="<?=$file?>"><i class="now-ui-icons files_paper"></i>
-                                Unduh</a></td>
+                                Unduh</a>&nbsp;<?php if($rekomendasi=='1'){
+                                  echo '<i class="fa fa-star"></i>';  
+                                }?></td>
                             <td><?=$status?></td>
                             <td><button type="button" class="btn btn-success" data-toggle="modal"
                                     data-target="#terimaProp<?=$npm?>"><i class="now-ui-icons ui-1_check"></i>
@@ -121,8 +124,8 @@
             <?php echo form_open('Koordinator/Pengajuan_prop/terima_prop','class="form_login"');?>
             <input type="text" name="npm" value="<?php echo $npm?>" hidden required>
             <div class="modal-body d-flex justify-content-between">
-                <button type="button" class="btn btn-secondary mr-1" data-dismiss="modal"> Batal</button>
-                <button type="submit" class="btn btn-success"> Terima</button>
+                <button type="button" class="cancel btn btn-secondary mr-1" data-dismiss="modal">Batal&nbsp;</button>
+                <button type="submit" class="save btn btn-success">Terima&nbsp;</button>
                 </form>
             </div>
         </div>

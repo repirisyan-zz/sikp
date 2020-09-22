@@ -38,6 +38,8 @@ function menu_koor(menu) {
         $('#menu_ubah_judul').addClass('active');
     } else if (menu == 'menu_jadwal') {
         $('#menu_jadwal').addClass('active');
+    } else if (menu == 'menu_rekomendasi_judul') {
+        $('#menu_rekomendasi').addClass('active');
     }
 };
 
@@ -282,13 +284,17 @@ function notif_ubah_judul(judul) {
         var message = "Judul berhasil diubah";
         nowuiDashboard.showNotification('top', 'right', message, 'success');
     } else if (judul == 'judul_false') {
-        var message = "Kata sandi tidak valid";
-        nowuiDashboard.showNotification('top', 'right', message, 'danger');
-    } else if (judul == 'null') {
-        var message = "Kata sandi tidak boleh kosong";
+        var message = "Terjadi kesalahan saat mengubah judul";
         nowuiDashboard.showNotification('top', 'right', message, 'danger');
     }
 };
+
+function notif_hapus_file(hapus_file) {
+    if (hapus_file == 'true') {
+        var message = "File berhasil dihapus";
+        nowuiDashboard.showNotification('top', 'right', message, 'success');
+    }
+}
 
 function notif_prop(prop) {
     if (prop == 'true_diterima') {
@@ -324,6 +330,9 @@ function notif_ubah_sandi(notif_kata_sandi) {
         nowuiDashboard.showNotification('top', 'right', message, 'success');
     } else if (sandi == 'false') {
         var message = "Terjadi kesalahan saat mengubah sandi";
+        nowuiDashboard.showNotification('top', 'right', message, 'danger');
+    } else if (sandi == 'null') {
+        var message = "Kata sandi tidak boleh kosong";
         nowuiDashboard.showNotification('top', 'right', message, 'danger');
     }
 };

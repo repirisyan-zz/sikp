@@ -1,6 +1,14 @@
 <?php
 class M_rekjudul extends CI_Model {
 
+    function rekomendasi_judul(){
+        $this->db->select('*');
+        $this->db->from('rek_judul');
+        $this->db->join('dosen','dosen.nip=rek_judul.nip');
+        $query = $this->db->get();
+        return $query;
+    }
+
     function rekjudul($nip)
     {
         $this->db->where('nip', $nip);

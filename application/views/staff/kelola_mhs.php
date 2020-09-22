@@ -44,6 +44,23 @@
                                     <?php echo $nama?>
                                 </td>
                                 <td>
+                                    <?php if($kemajuan == 'Mulai Kerja Praktek'){
+                                        echo '<svg height="20" width="20">
+                                        <circle cx="10" cy="10" r="5" stroke-width="3" fill="#e74c3c" />
+                                      </svg>';
+                                    }else if($kemajuan == 'Pengajuan Proposal'){
+                                        echo '<svg height="20" width="20">
+                                        <circle cx="10" cy="10" r="5" stroke-width="3" fill="#f1c40f" />
+                                      </svg>';
+                                    }else if($kemajuan == 'Bimbingan'){
+                                        echo '<svg height="20" width="20">
+                                        <circle cx="10" cy="10" r="5" stroke-width="3" fill="#2ecc71" />
+                                      </svg>'; 
+                                    }else if($kemajuan == 'Seminar'){
+                                        echo '<svg height="20" width="20">
+                                        <circle cx="10" cy="10" r="5" stroke-width="3" fill="#3498db" />
+                                      </svg>'; 
+                                    };?>
                                     <?php echo $kemajuan?>
                                 </td>
                                 <td>
