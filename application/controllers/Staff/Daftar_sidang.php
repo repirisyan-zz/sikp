@@ -31,15 +31,9 @@ class Daftar_sidang extends CI_Controller {
     }
 
     function selesai_sidang(){
-        $this->form_validation->set_rules('nama', 'nama', 'required');     
-        if ($this->form_validation->run() == false) {
-            $this->session->set_flashdata('selesai_sidang','false');
-            redirect('Staff/Daftar_sidang');
-        }else{
             $npm = $this->input->post('npm');
             $this->M_mhs->selesai_sidang($npm);
             $this->session->set_flashdata('selesai_sidang','true');
             redirect('Staff/Daftar_sidang');
-        }
     }
 }

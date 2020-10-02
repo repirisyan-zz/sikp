@@ -65,7 +65,7 @@
                                         <?php if($revisi == null){
                                             echo "Tidak ada berkas";
                                         }else{
-                                            echo "<a href='<?=base_url('file/revisi_proposal/').$revisi;' data-toggle='tooltip' data-placement='top' title='".$revisi."'><i class='now-ui-icons files_paper'></i> Unduh</a>";
+                                            echo "<a href='<?=base_url('file/revisi_proposal/').$revisi;' data-toggle='tooltip' data-placement='right' title='".$revisi."'><i class='now-ui-icons files_paper'></i> Unduh</a>";
                                             }?>
                                     </td>
                                     <td>

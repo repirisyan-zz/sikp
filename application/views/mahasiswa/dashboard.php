@@ -20,7 +20,7 @@
             </div>
         </div>
         <div class="col-lg-3 col-md-3 col-sm-6">
-            <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+            <div class="card text-white bg-newdg1 mb-3" style="max-width: 18rem;">
                 <div class="card-header text-center title">Dosen Pembimbing</div>
                 <div class="card-body">
                     <h5 class="card-title text-center">

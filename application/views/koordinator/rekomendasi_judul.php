@@ -14,7 +14,7 @@
                             <caption>Daftar Rekomendasi Judul</caption>
                             <thead class="text-primary">
                                 <th>
-                                    NIP
+                                    NIDN
                                 </th>
                                 <th>
                                     Dosen

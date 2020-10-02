@@ -38,7 +38,12 @@ class Rek_judul extends CI_Controller {
                 $npm = $this->session->userdata('username');
                 $status = '0';
                 $this->M_rekjudul->pilih_judul($id,$npm,$status);
+                $this->db->where('npm',$npm);
                 $this->load->model('M_mhs');
+                $data = $this->db->get('rek_judul')->result();
+                foreach($data as $i){$a = $i->nip;}
+                $this->load->model('M_dos');
+                $this->M_dos->min_batas_mhs($a);
                 $this->M_mhs->rekomendasi_dosen($npm);
                 $this->session->set_userdata('rekomend_judul','true');
                 redirect('Mahasiswa/Rek_judul/judul_dipilih');

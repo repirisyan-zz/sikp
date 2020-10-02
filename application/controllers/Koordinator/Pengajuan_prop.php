@@ -23,6 +23,7 @@ class Pengajuan_prop extends CI_Controller {
 			$x['title'] = "Pengajuan Proposal Koordinator";
 			$this->load->model('M_prop');
 			$data_proposal['data_proposal'] = $this->M_prop->proposal_koor();
+			$data_proposal['riwayat_proposal'] = $this->M_prop->riwayat_proposal();
 			$this->session->set_userdata('menu','menu_pengajuan_prop');
 			$this->load->view('koordinator/header',$x);
 			$this->load->view('koordinator/pengajuan_prop',$data_proposal);
@@ -62,13 +63,6 @@ class Pengajuan_prop extends CI_Controller {
 	
 		$this->upload->initialize($config);
 
-		$this->form_validation->set_rules('npm', 'npm', 'required');
-		$this->form_validation->set_rules('file', 'file', 'required');
-                
-            if ($this->form_validation->run() == false) {
-                $this->session->set_flashdata('notif_prop','false_diterima');
-				redirect('Koordinator/Pengajuan_prop');
-            }else{
 				if ( ! $this->upload->do_upload('file')){
 				$this->session->set_flashdata('notif_prop','false_ditolak');
 				redirect('Koordinator/Pengajuan_prop');
@@ -77,18 +71,35 @@ class Pengajuan_prop extends CI_Controller {
 				$data = array('upload_data' => $this->upload->data());
 				$status = 'ditolak';
 				$npm = $this->input->post('npm');
+				$rekomendasi = $this->input->post('rekomendasi');
 				$this->load->model('M_prop');
 				$keterangan = $this->input->post('keterangan');
 				$filename = $data["upload_data"]["file_name"];
-				$cek = $this->M_prop->tolak_prop($status,$npm,$filename,$keterangan);
-				if($cek == TRUE){
-					$this->load->model('M_mhs');
-					$kemajuan = "Mulai Kerja Praktek";
-                    $this->M_mhs->ubah_kemajuan($npm,$kemajuan);
-					$this->session->set_flashdata('notif_prop','true_ditolak');
-					redirect('Koordinator/Pengajuan_prop');
-					}
+				$this->M_prop->tolak_prop($status,$npm,$filename,$keterangan);
+				$this->load->model('M_mhs');
+				$kemajuan = "Mulai Kerja Praktek";
+				$this->M_mhs->ubah_kemajuan($npm,$kemajuan);
+				if($rekomendasi == 1){
+					$this->db->where('npm',$npm);
+					$this->db->set('rekomendasi_dosen',null);
+					$this->db->update('mahasiswa');
+
+					$this->db->select('nip');
+					$this->db->where('npm',$npm);
+					$data_judul = $this->db->get('rek_judul')->result();
+					foreach($data_judul as $i){$a = $i->nip;}
+
+					$this->db->where('nip',$a);
+					$this->db->set('batas_mhs','batas_mhs+1',false);
+					$this->db->set('batas_judul','batas_judul+1',false);
+					$this->db->update('dosen');
+
+					$this->db->where('npm',$npm);
+					$this->db->delete('rek_judul');
 				}
+				$this->session->set_flashdata('notif_prop','true_ditolak');
+				redirect('Koordinator/Pengajuan_prop');
+				
 			}
     	}
 }

@@ -5,7 +5,7 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-body">
-                    <button class="btn btn-primary" id="bimbingan" data-toggle="modal"
+                    <button class="btn btn-primary title" id="bimbingan" data-toggle="modal"
                         data-target="#tambah_bimbingan">Bimbingan
                         <i class="now-ui-icons ui-1_simple-add"></i></button>
                     <div class="table-responsive">

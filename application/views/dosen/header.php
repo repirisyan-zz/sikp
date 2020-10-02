@@ -41,25 +41,25 @@
                     <li id="menu_beranda">
                         <a href="<?=base_url('Dosen/Dosen')?>">
                             <i class="now-ui-icons design_app"></i>
-                            <p>Beranda</p>
+                            <p class="font-sidebar">Beranda</p>
                         </a>
                     </li>
                     <li id="menu_bimbingan">
                         <a href="<?=base_url('Dosen/Bimbingan')?>">
                             <i class="now-ui-icons files_single-copy-04"></i>
-                            <p>Bimbingan</p>
+                            <p class="font-sidebar">Bimbingan</p>
                         </a>
                     </li>
                     <li id="menu_rek_judul">
                         <a href="<?=base_url('Dosen/Rek_judul')?>">
                             <i class="now-ui-icons education_agenda-bookmark"></i>
-                            <p>Rekomendasi Judul</p>
+                            <p class="font-sidebar">Rekomendasi Judul</p>
                         </a>
                     </li>
                     <li id="menu_jadwal_menguji">
                         <a href="<?=base_url('Dosen/Jadwal_menguji')?>">
                             <i class="now-ui-icons design-2_ruler-pencil"></i>
-                            <p>JADWAL MENGUJI</p>
+                            <p class="font-sidebar">JADWAL MENGUJI</p>
                         </a>
                     </li>
                 </ul>

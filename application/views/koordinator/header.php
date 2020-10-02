@@ -41,37 +41,37 @@
                     <li id="menu_beranda">
                         <a href="<?=base_url('Koordinator/Koordinator')?>">
                             <i class="now-ui-icons design_app"></i>
-                            <p>Beranda</p>
+                            <p class="font-sidebar">Beranda</p>
                         </a>
                     </li>
                     <li id="menu_pengajuan_prop">
                         <a href="<?=base_url('Koordinator/Pengajuan_prop')?>">
                             <i class="now-ui-icons education_paper"></i>
-                            <p>Pengajuan Proposal</p>
+                            <p class="font-sidebar">Pengajuan Proposal</p>
                         </a>
                     </li>
                     <li id="menu_status_dosen">
                         <a href="<?=base_url('Koordinator/Status_dosen')?>">
                             <i class="now-ui-icons education_glasses"></i>
-                            <p>Status Dosen</p>
+                            <p class="font-sidebar">Status Dosen</p>
                         </a>
                     </li>
                     <li id="menu_ubah_judul">
                         <a href="<?=base_url('Koordinator/Judul_mhs')?>">
                             <i class="now-ui-icons education_agenda-bookmark"></i>
-                            <p>Judul Kerja Praktek</p>
+                            <p class="font-sidebar">Judul Kerja Praktek</p>
                         </a>
                     </li>
                     <li id="menu_jadwal">
                         <a href="<?=base_url('Koordinator/Jadwal')?>">
                             <i class="now-ui-icons ui-1_calendar-60"></i>
-                            <p>Jadwal Seminar</p>
+                            <p class="font-sidebar">Jadwal Seminar</p>
                         </a>
                     </li>
                     <li id="menu_rekomendasi">
                         <a href="<?=base_url('Koordinator/Rekomendasi_judul')?>">
                             <i class="now-ui-icons files_single-copy-04"></i>
-                            <p>Rekomendasi Judul</p>
+                            <p class="font-sidebar">Rekomendasi Judul</p>
                         </a>
                     </li>
                 </ul>

@@ -20,7 +20,7 @@
                                     Nama
                                 </th>
                                 <th>
-                                    Judul
+                                    Judul Kerja Praktek
                                 </th>
                                 <th class="text-center">
                                     Aksi

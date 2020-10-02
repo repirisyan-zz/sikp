@@ -4,7 +4,7 @@
     <div class="row">
         <div class="col-lg-3 col-md-3">
             <div class="card text-white bg-danger mb-3" style="max-width: 18rem;">
-                <div class="card-header text-center">Total Rekomendasi Judul</div>
+                <div class="card-header text-center title">Total Rekomendasi Judul</div>
                 <div class="card-body">
                     <h5 class="card-title text-center"><?php echo $this->session->userdata('total_rek_judul');?></h5>
                 </div>
@@ -12,7 +12,7 @@
         </div>
         <div class="col-lg-3 col-md-3">
             <div class="card text-white bg-warning mb-3" style="max-width: 18rem;">
-                <div class="card-header text-center">Rekomendasi Judul Diambil</div>
+                <div class="card-header text-center title">Rekomendasi Judul Diambil</div>
                 <div class="card-body">
                     <h5 class="card-title text-center"><?php echo $this->session->userdata('tot_ambil_rekjudul')?></h5>
                 </div>
@@ -20,7 +20,7 @@
         </div>
         <div class="col-lg-3 col-md-3">
             <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
-                <div class="card-header text-center">Mahasiswa Bimbingan</div>
+                <div class="card-header text-center title">Mahasiswa Bimbingan</div>
                 <div class="card-body">
                     <h5 class="card-title text-center"><?php echo $this->session->userdata('tot_mhs_bimbingan')?></h5>
                 </div>
@@ -28,7 +28,7 @@
         </div>
         <div class="col-lg-3 col-md-3">
             <div class="card text-white bg-success mb-3" style="max-width: 18rem;">
-                <div class="card-header text-center">Mahasiswa Sidang</div>
+                <div class="card-header text-center title">Mahasiswa Seminar</div>
                 <div class="card-body">
                     <h5 class="card-title text-center"><?php echo $this->session->userdata('jml_mhs_sidang')?></h5>
                 </div>

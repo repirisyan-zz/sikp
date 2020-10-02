@@ -14,7 +14,7 @@
                             <caption>Daftar Dosen</caption>
                             <thead class="text-primary">
                                 <th>
-                                    NIP
+                                    NIDN
                                 </th>
                                 <th>
                                     Nama
@@ -70,7 +70,7 @@
                 <div class="container">
                     <?php echo form_open('Staff/Kelola_dosen/tambah_dosen','class="form_login"');?>
                     <div class="form-group row">
-                        <label for="colFormLabelSm" class="col-sm-2 col-form-label">NIP</label>
+                        <label for="colFormLabelSm" class="col-sm-2 col-form-label">NIDN</label>
                         <div class="col-sm-10">
                             <input type="number" class="form-control" name="nip" maxlength="20" required>
                         </div>
@@ -112,7 +112,7 @@
                 <div class="container">
                     <?php echo form_open('Staff/Kelola_dosen/ubah_dosen','class="form_login"');?>
                     <div class="form-group row">
-                        <label for="colFormLabelSm" class="col-sm-2 col-form-label">NIP</label>
+                        <label for="colFormLabelSm" class="col-sm-2 col-form-label">NIDN</label>
                         <div class="col-sm-10">
                             <input type="number" class="form-control" readonly name="nip" value="<?php echo $nip?>"
                                 maxlength="20" required>

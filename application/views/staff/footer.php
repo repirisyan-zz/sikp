@@ -67,6 +67,36 @@ function upperCaseF(a) {
     }, 1);
 }
 
+function hapus_berkas(){
+    var konfirmasi = $('#konfirmasi_berkas').val();
+    if(konfirmasi != 'KONFIRMASI'){
+        $('#btn_konfirmasi').prop('disabled',true);
+    }
+    else if(konfirmasi == 'KONFIRMASI'){
+        $('#btn_konfirmasi').prop('disabled',false);
+    }
+}
+
+$('#pass, #confirm').on('keyup', function() {
+    if (($('#pass').val() == '') && ($('#confirm').val() == '')) {
+        $('#confirm').removeClass('is-invalid');
+        $('#confirm').removeClass('is-valid');
+        $('#btn_ubah_pw').removeClass('btn-success');
+        $('#btn_ubah_pw').removeClass('btn-danger');
+        $('#btn_ubah_pw').prop('disabled', false);
+    } else if ($('#pass').val() == $('#confirm').val()) {
+        $('#confirm').addClass('is-valid');
+        $('#confirm').removeClass('is-invalid');
+        $('#btn_ubah_pw').removeClass('btn-danger');
+        $('#btn_ubah_pw').prop('disabled', false);
+        $('#btn_ubah_pw').addClass('btn-success');
+    } else {
+        $('#confirm').addClass('is-invalid');
+        $('#btn_ubah_pw').addClass('btn-danger');
+        $('#btn_ubah_pw').prop('disabled', true);
+    }
+});
+
 $(document).ready(function() {
 
     var menu = '<?php echo $this->session->userdata('menu')?>';

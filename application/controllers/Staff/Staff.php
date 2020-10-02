@@ -79,28 +79,35 @@ class Staff extends CI_Controller {
 	}
 
 	function hapus_file(){
-		$files = glob('file/laporan/*'); //get all file names
-		foreach($files as $file){
-			if(is_file($file))
-			unlink($file); //delete file
+		$konfirmasi = $this->input->post('konfirmasi');
+		if($konfirmasi == 'konfirmasi'){
+			$files = glob('file/laporan/*'); //get all file names
+			foreach($files as $file){
+				if(is_file($file))
+				unlink($file); //delete file
+			}
+			$files1 = glob('file/proposal/*'); //get all file names
+			foreach($files1 as $file1){
+				if(is_file($file1))
+				unlink($file1); //delete file
+			}
+			$files2 = glob('file/revisi/*'); //get all file names
+			foreach($files2 as $file2){
+				if(is_file($file2))
+				unlink($file2); //delete file
+			}
+			$files3 = glob('file/revisi_proposal/*'); //get all file names
+			foreach($files3 as $file3){
+				if(is_file($file3))
+				unlink($file3); //delete file
+			}
+			$this->session->set_flashdata('hapus_file','true');
+			redirect('Staff/Staff');
+		}else {
+			$this->session->set_flashdata('hapus_file','false');
+			redirect('Staff/Staff');
 		}
-		$files1 = glob('file/proposal/*'); //get all file names
-		foreach($files1 as $file1){
-			if(is_file($file1))
-			unlink($file1); //delete file
-		}
-		$files2 = glob('file/revisi/*'); //get all file names
-		foreach($files2 as $file2){
-			if(is_file($file2))
-			unlink($file2); //delete file
-		}
-		$files3 = glob('file/revisi_proposal/*'); //get all file names
-		foreach($files3 as $file3){
-			if(is_file($file3))
-			unlink($file3); //delete file
-		}
-		$this->session->set_flashdata('hapus_file','true');
-		redirect('Staff/Staff');
+		
 	}
 
 	function logout(){

@@ -31,6 +31,10 @@ $('#myTable').DataTable({
     "scrollX": true
 });
 });
+$(document).ready( function () {
+$('#myTable1').DataTable({
+});
+});
 $(document).ready(function (){
     var active_menu = '<?php echo $this->session->userdata('menu')?>';
     menu_koor(active_menu);

@@ -28,7 +28,7 @@
         </div>
         <div class="col-lg-3 col-md-3">
             <div class="card text-white bg-success mb-3" style="max-width: 18rem;">
-                <div class="card-header text-center title">Mahasiswa Sidang</div>
+                <div class="card-header text-center title">Mahasiswa Seminar</div>
                 <div class="card-body">
                     <h5 class="card-title text-center"><?php echo $this->session->userdata('jml_mhs_sidang')?></h5>
                 </div>

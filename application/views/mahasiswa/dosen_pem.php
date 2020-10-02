@@ -15,8 +15,8 @@
                         <img src="<?=base_url('assets/img/foto/profile/'.$foto)?>" class="card-img-top img-thumbnail"
                             alt="Foto Profile Dosen">
                         <div class="card-body">
-                            <h5 class="card-title"><?=$nama?></h5>
-                            <p class="font-weight-bold">Ketersediaan : <?=$batas?></p>
+                            <p class="card-title font-weight-bold"><?=$nama?></p>
+                            <p>Ketersediaan : <?=$batas?></p>
                             <?php echo form_open('Mahasiswa/Dosen_pem/pilih_dosen','class="form_login"');?>
                             <input type="text" name="nip" value="<?=$nip?>" hidden>
                             <button type="submit" class="btn btn-primary btn-block">Pilih <i

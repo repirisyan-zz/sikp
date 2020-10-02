@@ -32,22 +32,21 @@ class Status_dosen extends CI_Controller {
 	function batas_mhs(){
 		$this->load->model('M_mhs');
 		$batas_mhs = 0;
-		$dosen = $this->M_dos->dosen_pembimbing()->num_rows();
+		$dosen = $this->M_dos->batas_mhs()->num_rows();
 		$mhs = $this->M_mhs->cek_jml_mhs()->num_rows();
-		if($mhs%$dosen == 0){
-			$batas_mhs = $mhs/$dosen; 
-		}else{
-			$batas_mhs = floor($mhs/$dosen)+1;
-		}
-		$cek = $this->M_dos->tambah_batas_mhs($batas_mhs);
-		if($cek == TRUE){
-			$this->session->set_flashdata('kalkulasi','batas_true');
-			redirect('Koordinator/Status_dosen');
-		}else{
+		try{
+			if($mhs%$dosen == 0){
+				$batas_mhs = $mhs/$dosen; 
+			}else if($mhs%$dosen == 1){
+				$batas_mhs = floor($mhs/$dosen)+1;
+				$this->M_dos->tambah_batas_mhs($batas_mhs);
+				$this->session->set_flashdata('kalkulasi','batas_true');
+				redirect('Koordinator/Status_dosen');	
+			}
+		}catch(DivisionByZeroError $e){
 			$this->session->set_flashdata('kalkulasi','batas_false');
-			redirect('Koordinator/Status_dosen');
-		}
-
+			redirect('Koordinator/Status_dosen');		
+		}	
 	}
     
     function status_aktif(){

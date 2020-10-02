@@ -44,7 +44,7 @@ class Pengajuan_prop extends CI_Controller {
     {
             $config['upload_path']          = './file/proposal';
             $config['allowed_types']        = 'docx|pdf';
-            $config['max_size']             = 0;
+            $config['max_size']             = 40000;
         
             $this->upload->initialize($config);
 

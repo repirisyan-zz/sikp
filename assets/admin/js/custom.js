@@ -164,10 +164,10 @@ function notif_rek_judul(status) {
         nowuiDashboard.showNotification('top', 'right', message, 'success');
     } else if (status == 'ubah') {
         var message = "Rekomendasi judul berhasil diubah";
-        nowuiDashboard.showNotification('top', 'right', message, 'warning');
+        nowuiDashboard.showNotification('top', 'right', message, 'success');
     } else if (status == 'hapus') {
         var message = "Rekomendasi judul berhasil dihapus";
-        nowuiDashboard.showNotification('top', 'right', message, 'danger');
+        nowuiDashboard.showNotification('top', 'right', message, 'success');
     } else if (status == 'tambah_gagal') {
         var message = "Terjadi kesalahan saat menambah data";
         nowuiDashboard.showNotification('top', 'right', message, 'danger');
@@ -179,7 +179,7 @@ function notif_rek_judul(status) {
         nowuiDashboard.showNotification('top', 'right', message, 'danger');
     } else if (status == 'tambah_gagal_penuh') {
         var message = "Anda sudah mencapai batas rekomendasi";
-        nowuiDashboard.showNotification('top', 'right', message, 'danger');
+        nowuiDashboard.showNotification('top', 'right', message, 'warning');
     }
 };
 
@@ -247,16 +247,16 @@ function notif_kelola(status) {
         nowuiDashboard.showNotification('top', 'right', message, 'success');
     } else if (status == 'ubah') {
         var message = "Data berhasil diubah";
-        nowuiDashboard.showNotification('top', 'right', message, 'warning');
+        nowuiDashboard.showNotification('top', 'right', message, 'success');
     } else if (status == 'hapus') {
         var message = "Data berhasil hapus";
-        nowuiDashboard.showNotification('top', 'right', message, 'danger');
+        nowuiDashboard.showNotification('top', 'right', message, 'success');
     } else if (status == 'tambah_gagal') {
         var message = "NPM yang ditambahkan telah terdaftar";
-        nowuiDashboard.showNotification('top', 'right', message, 'danger');
+        nowuiDashboard.showNotification('top', 'right', message, 'warning');
     } else if (status == 'tambah_dos_gagal') {
-        var message = "NIP yang ditambahkan telah terdaftar";
-        nowuiDashboard.showNotification('top', 'right', message, 'danger');
+        var message = "NIDN yang ditambahkan telah terdaftar";
+        nowuiDashboard.showNotification('top', 'right', message, 'warning');
     } else if (status == 'ubah_gagal') {
         var message = "Terjadi error saat mengubah data";
         nowuiDashboard.showNotification('top', 'right', message, 'danger');
@@ -274,8 +274,8 @@ function notif_kalkulasi(kalkulasi) {
         var message = "Data berhasil dikalkulasi";
         nowuiDashboard.showNotification('top', 'right', message, 'success');
     } else if (kalkulasi == 'batas_false') {
-        var message = "Terjadi kesalahan saat kalkulasi";
-        nowuiDashboard.showNotification('top', 'right', message, 'danger');
+        var message = "Tidak ada data dosen yang aktif";
+        nowuiDashboard.showNotification('top', 'right', message, 'warning');
     }
 };
 
@@ -293,6 +293,9 @@ function notif_hapus_file(hapus_file) {
     if (hapus_file == 'true') {
         var message = "File berhasil dihapus";
         nowuiDashboard.showNotification('top', 'right', message, 'success');
+    } else if (hapus_file == 'false') {
+        var message = "Terjadi Kesalahan Saat Menghapus File";
+        nowuiDashboard.showNotification('top', 'right', message, 'danger');
     }
 }
 

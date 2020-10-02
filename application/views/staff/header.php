@@ -41,25 +41,31 @@
                     <li id="menu_beranda">
                         <a href="<?=base_url('Staff/Staff')?>">
                             <i class="now-ui-icons design_app"></i>
-                            <p>Beranda</p>
+                            <p class="font-sidebar">Beranda</p>
                         </a>
                     </li>
                     <li id="menu_mhs">
                         <a href="<?=base_url('Staff/Kelola_mhs')?>">
                             <i class="now-ui-icons education_hat"></i>
-                            <p>Kelola Mahasiswa</p>
+                            <p class="font-sidebar">Kelola Mahasiswa</p>
                         </a>
                     </li>
                     <li id="menu_dosen">
                         <a href="<?=base_url('Staff/Kelola_dosen')?>">
                             <i class="now-ui-icons education_glasses"></i>
-                            <p>Kelola Dosen</p>
+                            <p class="font-sidebar">Kelola Dosen</p>
                         </a>
                     </li>
                     <li id="menu_daftar_sidang">
                         <a href="<?=base_url('Staff/Daftar_sidang')?>">
                             <i class="now-ui-icons ui-1_calendar-60"></i>
-                            <p>Seminar Mahasiswa</p>
+                            <p class="font-sidebar">Seminar Mahasiswa</p>
+                        </a>
+                    </li>
+                    <li id="menu_data_mhs">
+                        <a href="<?=base_url('Staff/Data_mhs')?>">
+                            <i class="now-ui-icons business_badge"></i>
+                            <p class="font-sidebar">Data Mahasiswa</p>
                         </a>
                     </li>
                 </ul>
@@ -94,7 +100,7 @@
                                         $base = 1024;
                                         $class = min((int)log($bytes , $base) , count($si_prefix) - 1);
                                         echo sprintf('%1.2f' , $bytes / pow($base,$class)) . ' ' . $si_prefix[$class];
-                                        ?>
+                                        ?>  
                                     <p>
                                         <span class="d-lg-none d-md-block">Stats</span>
                                     </p>
@@ -134,14 +140,16 @@
                             </button>
                         </div>
                         <div class="modal-body">
-                            <strong class="text-danger">Apakah anda yakin akan menghapus seluruh berkas mahasiswa
+                            <strong>Apakah anda yakin akan menghapus seluruh berkas mahasiswa
                                 ?</strong>
+                            <?php echo form_open('Staff/Staff/hapus_file','class="form_login"');?>
+                            <br>
+                            <input required onkeyup="hapus_berkas()" id="konfirmasi_berkas" type="text" class="form-control" name="konfirmasi" placeholder="Ketik KONFIRMASI" style="width: 150px;">
                         </div>
                         <div class="modal-footer">
-                            <?php echo form_open('Staff/Staff/hapus_file','class="form_login"');?>
                             <button type="button" class="cancel btn btn-secondary"
                                 data-dismiss="modal">Batal&nbsp;</button>
-                            <button type="submit" class="save btn btn-danger">Hapus&nbsp;</button>
+                            <button type="submit" class="save btn btn-danger" id="btn_konfirmasi" disabled>Hapus&nbsp;</button>
                             </form>
                         </div>
                     </div>

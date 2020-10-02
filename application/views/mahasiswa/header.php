@@ -38,25 +38,25 @@
                     <li id="menu_beranda">
                         <a href="<?=base_url('Mahasiswa/Mahasiswa')?>">
                             <i class="now-ui-icons design_app"></i>
-                            <p>Beranda</p>
+                            <p class="font-sidebar">Beranda</p>
                         </a>
                     </li>
                     <li id="menu_pengajuan_prop">
                         <a href="<?=base_url('Mahasiswa/Pengajuan_prop')?>">
                             <i class="now-ui-icons files_single-copy-04"></i>
-                            <p>Pengajuan Proposal</p>
+                            <p class="font-sidebar">Pengajuan Proposal</p>
                         </a>
                     </li>
                     <li id="menu_dosen_pem" hidden>
                         <a id="bimbingan" href="<?=base_url('Mahasiswa/Dosen_pem')?>">
                             <i class="now-ui-icons design_app"></i>
-                            <p id="text_bimbingan">Dosen Pembimbing</p>
+                            <p id="text_bimbingan" class="font-sidebar">Dosen Pembimbing</p>
                         </a>
                     </li>
                     <li id="menu_rek_judul">
                         <a href="<?=base_url('Mahasiswa/Rek_judul')?>" id="info_judul">
                             <i class="now-ui-icons files_single-copy-04"></i>
-                            <p id="text_info_judul">Rekomendasi Judul</p>
+                            <p id="text_info_judul" class="font-sidebar">Rekomendasi Judul</p>
                         </a>
                     </li>
                 </ul>

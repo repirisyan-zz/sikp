@@ -31,6 +31,9 @@
                                     Revisi Dosen
                                 </th>
                                 <th>
+                                    Keterangan
+                                </th>
+                                <th>
                                     Aksi
                                 </th>
                             </thead>
@@ -42,6 +45,7 @@
                                         $tanggal = $i['tanggal'];
                                         $file = $i['file'];
                                         $revisi = $i['revisi'];
+                                        $keterangan = $i['keterangan'];
                                     ?>
                                 <tr>
                                     <td>
@@ -51,15 +55,30 @@
                                         <?php echo $pembahasan?>
                                     </td>
                                     <td>
-                                        <a href="<?=base_url('file/laporan/').$file?>"><i
-                                                class="now-ui-icons files_paper"></i> <?php echo $file?></a>
+                                        <a href="<?=base_url('file/laporan/').$file?>" data-toggle="tooltip"
+                                            data-placement="right" title="<?=$file?>"><i
+                                                class="now-ui-icons files_paper"></i>
+                                            Unduh</a>
                                     </td>
                                     <td>
                                         <?php if($revisi == null){
                                             echo "Tidak ada berkas";
                                         }else{
-                                            echo "<a href='<?=base_url('file/revisi/').$revisi;'><i class='now-ui-icons files_paper'></i> $revisi</a>";
+                                            echo "<a href=".base_url("file/revisi/".$revisi)." data-toggle='tooltip'
+                                            data-placement='right' title=".$revisi."><i
+                                                class='now-ui-icons files_paper'></i>
+                                            Unduh</a>";
                                             }?>
+                                    </td>
+                                    <td>
+                                        <?php if($keterangan == null){
+                                            echo "Tidak ada keterangan";
+                                        }else{
+                                            echo "<a href='#' data-toggle='tooltip'
+                                            data-placement='left' title=".$keterangan."><i
+                                                class='now-ui-icons files_paper'></i>
+                                            Lihat</a>";
+                                        }?>
                                     </td>
                                     <td>
                                         <button class="btn btn-primary" data-toggle="modal"

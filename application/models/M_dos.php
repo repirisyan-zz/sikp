@@ -48,6 +48,12 @@ class M_dos extends CI_Model {
         return $query;
     }
 
+    function batas_mhs(){
+        $this->db->where('status_aktif','1');
+        $query = $this->db->get('dosen');
+        return $query;
+    }
+
     function tambah_batas_mhs($batas_mhs){
         $this->db->where('status_aktif','1');
         $this->db->set('batas_mhs',$batas_mhs);
@@ -68,13 +74,13 @@ class M_dos extends CI_Model {
 
     function min_batas_mhs($nip){
         $this->db->where('nip',$nip);
-        $this->db->set('batas_mhs','batas_mhs-1');
+        $this->db->set('batas_mhs','batas_mhs-1',false);
         $this->db->update('dosen');
     }
 
     function min_batas_menguji($nama_penguji){
         $this->db->where('nama_dosen',$nama_penguji);
-        $this->db->set('batas_menguji','batas_menguji-1');
+        $this->db->set('batas_menguji','batas_menguji-1',false);
         $this->db->update('dosen');
     }
 

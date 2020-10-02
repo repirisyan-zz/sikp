@@ -8,6 +8,14 @@ class M_prop extends CI_Model {
         return $query;
     }
 
+    function riwayat_proposal(){
+        $this->db->select('*');
+        $this->db->from('proposal');
+        $this->db->join('mahasiswa','proposal.npm=mahasiswa.npm');
+        $this->db->where('proposal.status_proposal','diterima');
+        return $this->db->get();
+    }
+
     function cek_proposal($npm){
         $this->db->where('npm',$npm);
         $query = $this->db->get('proposal');

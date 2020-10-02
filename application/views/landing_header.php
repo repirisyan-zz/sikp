@@ -4,15 +4,23 @@
             <a class="navbar-brand" href="http://ft.unsur.ac.id/" target="_blank" rel="noopener noreferrer">
                 <img src="<?=base_url('assets/img/logo_ft.png')?>" alt="">
             </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
+                aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-bar navbar-kebab"></span>
+                <span class="navbar-toggler-bar navbar-kebab"></span>
+                <span class="navbar-toggler-bar navbar-kebab"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <a href="#" class="text-white text-decoration-none ml-auto" id="login" data-toggle="modal"
-                    data-target="#modalLogin">
-                    <i class="fa fa-sign-in-alt"></i>&nbsp;Login
-                </a>
+            <div class="collapse navbar-collapse justify-content-end" id="navigation">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-toggle="modal" data-target="#modalLogin">
+                            <i class="fa fa-sign-in-alt"></i>&nbsp;Login
+                            <p>
+                                <span class="d-lg-none d-md-block"></span>
+                            </p>
+                        </a>
+                    </li>
+                </ul>
             </div>
         </div>
     </nav>

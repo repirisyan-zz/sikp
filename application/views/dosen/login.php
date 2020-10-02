@@ -8,7 +8,7 @@
                     </h5>
                     <div class="card-body">
                         <div class="form-group" style="margin-top: 20px;">
-                            <input type="text" name="username" placeholder="Username" class="form-control"
+                            <input type="text" name="username" placeholder="NIDN" class="form-control"
                                 id="exampleInputEmail1" aria-describedby="emailHelp">
                             <small id="emailHelp" class="form-text" style="color: red;"><?php
             echo form_error('username',"<i class=\"far fa-times-circle\"></i> &nbsp;");?></small>

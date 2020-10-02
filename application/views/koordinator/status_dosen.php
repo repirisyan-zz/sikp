@@ -7,7 +7,7 @@
                 <div class="card-header">
                     <a href="<?=base_url('Koordinator/Status_dosen/batas_mhs')?>" class="btn btn-primary title"
                         data-toggle='tooltip' data-placement='right'
-                        title='Digunakan untuk membatasi jumlah bimbingan dosen'><i
+                        title='Digunakan untuk membatasi jumlah mahasiswa bimbingan dosen'><i
                             class="now-ui-icons ui-2_settings-90"></i> Kalkulasi</a>
                 </div>
                 <div class="card-body">
@@ -16,7 +16,7 @@
                             <caption>Daftar Dosen</caption>
                             <thead class="text-primary">
                                 <th>
-                                    NIP
+                                    NIDN
                                 </th>
                                 <th>
                                     Nama
