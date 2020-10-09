@@ -37,6 +37,9 @@ class Status_dosen extends CI_Controller {
 		try{
 			if($mhs%$dosen == 0){
 				$batas_mhs = $mhs/$dosen; 
+				$this->M_dos->tambah_batas_mhs($batas_mhs);
+				$this->session->set_flashdata('kalkulasi','batas_true');
+				redirect('Koordinator/Status_dosen');
 			}else if($mhs%$dosen == 1){
 				$batas_mhs = floor($mhs/$dosen)+1;
 				$this->M_dos->tambah_batas_mhs($batas_mhs);

@@ -62,12 +62,6 @@
                             <p class="font-sidebar">Seminar Mahasiswa</p>
                         </a>
                     </li>
-                    <li id="menu_data_mhs">
-                        <a href="<?=base_url('Staff/Data_mhs')?>">
-                            <i class="now-ui-icons business_badge"></i>
-                            <p class="font-sidebar">Data Mahasiswa</p>
-                        </a>
-                    </li>
                 </ul>
             </div>
         </div>

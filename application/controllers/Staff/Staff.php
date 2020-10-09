@@ -80,7 +80,7 @@ class Staff extends CI_Controller {
 
 	function hapus_file(){
 		$konfirmasi = $this->input->post('konfirmasi');
-		if($konfirmasi == 'konfirmasi'){
+		if($konfirmasi == 'KONFIRMASI'){
 			$files = glob('file/laporan/*'); //get all file names
 			foreach($files as $file){
 				if(is_file($file))

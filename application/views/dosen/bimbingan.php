@@ -65,7 +65,7 @@
                                             echo "Tidak ada berkas";
                                         }else{
                                             echo "<a href=".base_url("file/revisi/".$revisi)." data-toggle='tooltip'
-                                            data-placement='right' title=".$revisi."><i
+                                            data-placement='left' title='$revisi'><i
                                                 class='now-ui-icons files_paper'></i>
                                             Unduh</a>";
                                             }?>
@@ -75,7 +75,7 @@
                                             echo "Tidak ada keterangan";
                                         }else{
                                             echo "<a href='#' data-toggle='tooltip'
-                                            data-placement='left' title=".$keterangan."><i
+                                            data-placement='left' title='$keterangan'><i
                                                 class='now-ui-icons files_paper'></i>
                                             Lihat</a>";
                                         }?>
