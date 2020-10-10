@@ -10,7 +10,7 @@
                     <button class="btn btn-primary" data-toggle="modal" data-target="#tambahDosen">Tambah Data
                         <i class="now-ui-icons ui-1_simple-add"></i></button>
                     <div class="table-responsive">
-                        <table class="table" id="myTable" style="width: 100%;">
+                        <table class="table nowrap" id="myTable" style="width: 100%;">
                             <caption>Daftar Dosen</caption>
                             <thead class="text-primary">
                                 <th>

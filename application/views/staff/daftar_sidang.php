@@ -10,7 +10,7 @@
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
-                        <table class="table" id="myTable" style="width: 100%;">
+                        <table class="table nowrap" id="myTable" style="width: 100%;">
                             <caption>Daftar Seminar Mahasiswa</caption>
                             <thead class="text-primary">
                                 <th>
