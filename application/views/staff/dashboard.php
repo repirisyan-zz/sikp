@@ -2,7 +2,7 @@
 </div>
 <div class="content">
     <div class="row">
-        <div class="col-lg-4 col-md-4 col-sm-6">
+        <div class="col-6 col-lg-4 col-md-4 col-sm-6">
             <div class="card text-white bg-danger mb-3" style="max-width: 18rem;">
                 <div class="card-header text-center title">Total Mahasiswa</div>
                 <div class="card-body">
@@ -10,7 +10,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-4 col-md-4 col-sm-6">
+        <div class="col-6 col-lg-4 col-md-4 col-sm-6">
             <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
                 <div class="card-header text-center title">Total Dosen</div>
                 <div class="card-body">
@@ -18,7 +18,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-4 col-md-4 col-sm-6">
+        <div class="col-6 col-lg-4 col-md-4 col-sm-6">
             <div class="card text-white bg-newdg2 mb-3" style="max-width: 18rem;">
                 <div class="card-header text-center title">Total Dosen Pembimbing</div>
                 <div class="card-body">
@@ -26,7 +26,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-4 col-md-4 col-sm-6">
+        <div class="col-6 col-lg-4 col-md-4 col-sm-6">
             <div class="card text-white bg-warning mb-3" style="max-width: 18rem;">
                 <div class="card-header text-center title">Pengajuan Proposal</div>
                 <div class="card-body">
@@ -34,7 +34,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-4 col-md-4 col-sm-6">
+        <div class="col-6 col-lg-4 col-md-4 col-sm-6">
             <div class="card text-white bg-newdg1 mb-3" style="max-width: 18rem;">
                 <div class="card-header text-center title">Mahasiswa Bimbingan</div>
                 <div class="card-body">
@@ -42,7 +42,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-4 col-md-4 col-sm-6">
+        <div class="col-6 col-lg-4 col-md-4 col-sm-6">
             <div class="card text-white bg-success mb-3" style="max-width: 18rem;">
                 <div class="card-header text-center title">Mahasiswa Seminar</div>
                 <div class="card-body">

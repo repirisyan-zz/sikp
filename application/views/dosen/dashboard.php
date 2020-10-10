@@ -2,7 +2,7 @@
 </div>
 <div class="content">
     <div class="row">
-        <div class="col-lg-3 col-md-3">
+        <div class="col-6 col-lg-3 col-md-3">
             <div class="card text-white bg-danger mb-3" style="max-width: 18rem;">
                 <div class="card-header text-center title">Total Rekomendasi Judul</div>
                 <div class="card-body">
@@ -10,7 +10,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-3 col-md-3">
+        <div class="col-6 col-lg-3 col-md-3">
             <div class="card text-white bg-warning mb-3" style="max-width: 18rem;">
                 <div class="card-header text-center title">Rekomendasi Judul Diambil</div>
                 <div class="card-body">
@@ -18,7 +18,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-3 col-md-3">
+        <div class="col-6 col-lg-3 col-md-3">
             <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
                 <div class="card-header text-center title">Mahasiswa Bimbingan</div>
                 <div class="card-body">
@@ -26,7 +26,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-3 col-md-3">
+        <div class="col-6 col-lg-3 col-md-3">
             <div class="card text-white bg-success mb-3" style="max-width: 18rem;">
                 <div class="card-header text-center title">Mahasiswa Seminar</div>
                 <div class="card-body">

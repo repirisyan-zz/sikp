@@ -5,8 +5,7 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <h5><span class="badge badge-primary"><i class="now-ui-icons files_single-copy-04"></i> Bimbingan
-                            Mahasiswa <?=$this->session->userdata('set_nama')?></span></h5>
+                    <h5><span class="badge badge-primary"><i class="now-ui-icons files_single-copy-04"></i>&nbsp;<?=$this->session->userdata('set_nama')?></span></h5>
                 </div>
                 <div class="card-body">
                     <button class="btn btn-primary" id="bimbingan" data-toggle="modal"

@@ -1,7 +1,7 @@
 <body class="bg-primary">
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-12 col-sm-6 col-md-3">
+            <div class="col-6 col-sm-6 col-md-3">
                 <?php echo form_open('Mahasiswa/Mahasiswa/login','class="form-center"');?>
                 <div class="card" style="border-radius: 1rem;">
                     <h5 class="card-header text-muted"><i class="now-ui-icons ui-1_lock-circle-open"></i> Login
