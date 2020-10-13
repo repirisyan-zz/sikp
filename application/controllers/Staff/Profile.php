@@ -55,7 +55,7 @@ class Profile extends CI_Controller {
 	}
 	
 	function upload_foto(){
-		$config['upload_path']          = './assets/img/foto/profile/';
+		$config['upload_path']          = './file/foto/profile/';
 		$config['allowed_types']        = 'jpg|jpeg';
 		$config['max_size']             = 2000;
 	
@@ -73,7 +73,7 @@ class Profile extends CI_Controller {
 				$filename = $data["upload_data"]["file_name"];
 				$row = $this->db->where('username',$username)->get('staff')->row();
 				if ($row->foto != "default_profile.jpg"){
-					unlink('assets/img/foto/profile/'.$row->foto);
+					unlink('file/foto/profile/'.$row->foto);
 				}
 				$this->M_staff->upload_profile($username,$filename);
 				$this->session->set_flashdata('upload_foto','true');
@@ -82,7 +82,7 @@ class Profile extends CI_Controller {
 	}
 
 	function upload_sampul(){
-		$config['upload_path']          = './assets/img/foto/sampul/';
+		$config['upload_path']          = './file/foto/sampul/';
 		$config['allowed_types']        = 'jpg|jpeg';
 		$config['max_size']             = 2000;
 	
@@ -100,7 +100,7 @@ class Profile extends CI_Controller {
 				$filename = $data["upload_data"]["file_name"];
 				$row = $this->db->where('username',$username)->get('staff')->row();
 				if ($row->sampul != "default_sampul.jpg"){
-					unlink('assets/img/foto/sampul/'.$row->sampul);
+					unlink('file/foto/sampul/'.$row->sampul);
 				}
 				$this->M_staff->upload_sampul($username,$filename);
 				$this->session->set_flashdata('upload_sampul','true');

@@ -39,7 +39,7 @@
         <div class="col-md-4">
             <div class="card card-user">
                 <div class="image">
-                    <img src="<?=base_url('assets/img/foto/sampul/'.$sampul)?>" alt="Sampul" id="upload_sampul">
+                    <img src="<?=base_url('file/foto/sampul/'.$sampul)?>" alt="Sampul" id="upload_sampul">
                     <button data-toggle="modal" data-target="#uploadSampul" style="position: absolute;
                                 top: 20%;
                                 left: 20%;
@@ -59,7 +59,7 @@
                         <span>
                             <div class="container">
                                 <img class="avatar border-gray" id="upload_foto"
-                                    src="<?=base_url('assets/img/foto/profile/'.$foto)?>" alt="Foto Profil">
+                                    src="<?=base_url('file/foto/profile/'.$foto)?>" alt="Foto Profil">
                                 <button data-toggle="modal" data-target="#uploadFoto" style="position: absolute;
                                 top: 35%;
                                 left: 50%;

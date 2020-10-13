@@ -25,10 +25,6 @@
 <!-- Now Ui Dashboard DEMO methods, don't include it in your project! -->
 <script src="<?=base_url('assets/admin/js/custom.js')?>"></script>
 <script>
-$(document).ready(function() {
-    // Javascript method's body can be found in assets/js/demos.js
-    demo.initDashboardPageCharts();
-});
 $(document).ready( function () {
 $('#myTable').DataTable({
     "scrollX": true
@@ -48,7 +44,12 @@ $(document).ready(function() {
 
     var bimbingan_dosen = '<?php echo $this->session->flashdata('bimbingan_dosen')?>';
     bimbingan_dosen(bimbingan_dosen);
+    
+    var upload_foto = '<?php echo $this->session->flashdata('upload_foto')?>';
+    notif_upload_foto(upload_foto);
 
+    var upload_sampul = '<?php echo $this->session->flashdata('upload_sampul')?>';
+    notif_upload_sampul(upload_sampul);
     
 });
 </script>

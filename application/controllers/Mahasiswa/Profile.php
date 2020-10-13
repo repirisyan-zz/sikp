@@ -53,7 +53,7 @@ class Profile extends CI_Controller {
 	}
 	
 	function upload_foto(){
-		$config['upload_path']          = './assets/img/foto/profile/';
+		$config['upload_path']          = './file/foto/profile/';
 		$config['allowed_types']        = 'jpg|jpeg';
 		$config['max_size']             = 2000;
 	
@@ -71,7 +71,7 @@ class Profile extends CI_Controller {
 				$filename = $data["upload_data"]["file_name"];
 				$row = $this->db->where('npm',$npm)->get('mahasiswa')->row();
 				if ($row->sampul != "default_profile.jpg"){
-					unlink('assets/img/foto/profile/'.$row->foto);
+					unlink('file/foto/profile/'.$row->foto);
 				}
 				$this->M_mhs->upload_profile($npm,$filename);
 				$this->session->set_flashdata('upload_foto','true');
@@ -81,7 +81,7 @@ class Profile extends CI_Controller {
 	}
 
 	function upload_sampul(){
-		$config['upload_path']          = './assets/img/foto/sampul/';
+		$config['upload_path']          = './file/foto/sampul/';
 		$config['allowed_types']        = 'jpg|jpeg';
 		$config['max_size']             = 2000;
 	
@@ -99,7 +99,7 @@ class Profile extends CI_Controller {
 				$filename = $data["upload_data"]["file_name"];
 				$row = $this->db->where('npm',$npm)->get('mahasiswa')->row();
 				if ($row->sampul != "default_sampul.jpg"){
-					unlink('assets/img/foto/sampul/'.$row->sampul);
+					unlink('file/foto/sampul/'.$row->sampul);
 				}
 				$this->M_mhs->upload_sampul($npm,$filename);
 				$this->session->set_flashdata('upload_sampul','true');
