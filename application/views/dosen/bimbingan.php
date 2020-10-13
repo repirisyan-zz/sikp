@@ -144,7 +144,7 @@
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="inputPassword" class="col-sm-4 col-form-label">Berkas Mahasiswa</label>
+                        <label for="inputPassword" class="col-sm-4 col-form-label">Berkas Revisi</label>
                         <div class="col-sm-8">
                             <div class="custom-file mb-3">
                                 <input type="file" name="file" class="custom-file-input" id="validatedCustomFile">

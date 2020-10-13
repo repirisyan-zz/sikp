@@ -91,10 +91,10 @@ function menu_mahasiswa(menu) {
 
 function pengajuan_prop(prop) {
     if (prop == 'true') {
-        var message = "Berkas Berhasil di Unggah";
+        var message = "Proposal Berhasil di Unggah";
         nowuiDashboard.showNotification('top', 'right', message, 'success');
     } else if (prop == 'false') {
-        var message = "Terjadi kesalahan saat mengunggah berkas";
+        var message = "Terjadi kesalahan saat mengunggah Proposal";
         nowuiDashboard.showNotification('top', 'right', message, 'danger');
     }
 };

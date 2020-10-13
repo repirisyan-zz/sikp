@@ -84,7 +84,7 @@ class Bimbingan extends CI_Controller {
                     'nip' => $nip,
                     'pembahasan' => $pembahasan,
                     'tanggal' => $tanggal,
-                    'file' => $filename,
+                    'revisi' => $filename,
                     'keterangan' => $keterangan
                     );
                 $this->M_bimbingan->upload($data);
