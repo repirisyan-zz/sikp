@@ -85,8 +85,8 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="cancel btn btn-secondary" data-dismiss="modal"
-                    style="width: 100px;">Tidak</button>
-                <button type="submit" class="save btn btn-success" style="width: 100px;">Ya</button>
+                    style="width: 100px;">Tidak&nbsp;</button>
+                <button type="submit" class="save btn btn-success" style="width: 100px;">Ya&nbsp;</button>
             </div>
             </form>
         </div>
