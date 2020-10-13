@@ -57,6 +57,12 @@ $(document).ready(function() {
     var prop = '<?php echo $this->session->flashdata('pengajuan_prop')?>';
     pengajuan_prop(prop);
 
+    var upload_foto = '<?php echo $this->session->flashdata('upload_foto')?>';
+    notif_upload_foto(upload_foto);
+
+    var upload_sampul = '<?php echo $this->session->flashdata('upload_sampul')?>';
+    notif_upload_sampul(upload_sampul);
+
 });
 
 </script>

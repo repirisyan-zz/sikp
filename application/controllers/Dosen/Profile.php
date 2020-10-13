@@ -87,7 +87,7 @@ class Profile extends CI_Controller {
 
 		if ( ! $this->upload->do_upload('foto_sampul'))
 		{
-			$this->session->set_flashdata('upload_foto','false');
+			$this->session->set_flashdata('upload_sampul','false');
 			redirect('Dosen/Profile','refresh'); 
 		}
 		else
@@ -100,6 +100,7 @@ class Profile extends CI_Controller {
 					unlink('assets/img/foto/sampul/'.$row->foto);
 				}
 				$this->M_dos->upload_sampul($nip,$filename);
+				$this->session->set_flashdata('upload_sampul','true');
 					redirect('Dosen/Profile','refresh');
 		}
 	}

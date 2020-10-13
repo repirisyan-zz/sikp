@@ -69,11 +69,11 @@ class Profile extends CI_Controller {
 				$data = array('upload_data' => $this->upload->data());
 				$npm = $this->session->userdata('username');
 				$filename = $data["upload_data"]["file_name"];
-				$this->M_mhs->upload_profile($npm,$filename);
 				$row = $this->db->where('npm',$npm)->get('mahasiswa')->row();
 				if ($row->sampul != "default_profile.jpg"){
 					unlink('assets/img/foto/profile/'.$row->foto);
 				}
+				$this->M_mhs->upload_profile($npm,$filename);
 				$this->session->set_flashdata('upload_foto','true');
 				redirect('Mahasiswa/Profile','refresh');
 					  
@@ -89,7 +89,7 @@ class Profile extends CI_Controller {
 
 		if ( ! $this->upload->do_upload('foto_sampul'))
 		{
-			$this->session->set_flashdata('upload_foto','false');
+			$this->session->set_flashdata('upload_sampul','false');
 			redirect('Mahasiswa/Profile','refresh'); 
 		}
 		else
@@ -102,6 +102,7 @@ class Profile extends CI_Controller {
 					unlink('assets/img/foto/sampul/'.$row->sampul);
 				}
 				$this->M_mhs->upload_sampul($npm,$filename);
+				$this->session->set_flashdata('upload_sampul','true');
 				redirect('Mahasiswa/Profile','refresh');
 		}
 	}
