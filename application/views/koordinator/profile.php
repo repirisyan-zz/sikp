@@ -104,6 +104,8 @@
                                 <input type="file" name="foto_profile" class="custom-file-input"
                                     id="validatedCustomFile" required>
                                 <label class="custom-file-label" for="validatedCustomFile">Pilih foto...</label>
+                                <br><br>
+                                <small class="text-muted">max 2MB</small>
                             </div>
                         </div>
                     </div>
@@ -139,6 +141,8 @@
                                 <input type="file" name="foto_sampul" class="custom-file-input1"
                                     id="validatedCustomFile1" required>
                                 <label class="custom-file-label" for="validatedCustomFile1">Pilih foto JPG</label>
+                                <br><br>
+                                <small class="text-muted">max 2MB</small>
                                 <div class="invalid-feedback">Example invalid custom file feedback</div>
                             </div>
                         </div>

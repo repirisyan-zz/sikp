@@ -57,7 +57,7 @@ class Profile extends CI_Controller {
 	function upload_foto(){
 		$config['upload_path']          = './assets/img/foto/profile/';
 		$config['allowed_types']        = 'jpg|jpeg';
-		$config['max_size']             = 1000;
+		$config['max_size']             = 2000;
 	
 		$this->upload->initialize($config);
 
@@ -84,7 +84,7 @@ class Profile extends CI_Controller {
 	function upload_sampul(){
 		$config['upload_path']          = './assets/img/foto/sampul/';
 		$config['allowed_types']        = 'jpg|jpeg';
-		$config['max_size']             = 1000;
+		$config['max_size']             = 2000;
 	
 		$this->upload->initialize($config);
 
