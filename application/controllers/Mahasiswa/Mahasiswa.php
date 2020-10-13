@@ -79,7 +79,7 @@ class Mahasiswa extends CI_Controller {
 					$status_sidang='';
 					$stat_sid = $this->M_mhs->cek_sidang($npm)->result();
 					foreach($stat_sid as $c){$status_sidang = $c->kemajuan;}
-					if($status_sidang == 'Sidang'){
+					if($status_sidang == 'Seminar'){
 						$this->session->set_userdata('sidang_mhs','true');
 					}else if($status == 'diterima' && $nip_mhs != null){
 						$this->session->set_userdata('bimbingan_mhs','true');

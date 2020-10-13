@@ -23,7 +23,6 @@
 <script src="<?=base_url('assets/admin/js/jquery.dataTables.min.js')?>"></script>
 <script src="<?=base_url('assets/admin/js/datatables.min.js')?>"></script>
 <!-- Now Ui Dashboard DEMO methods, don't include it in your project! -->
-<script src="<?=base_url('assets/admin/demo/demo.js')?>"></script>
 <script src="<?=base_url('assets/admin/js/custom.js')?>"></script>
 <script>
 $(document).ready(function() {

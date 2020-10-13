@@ -1,26 +1,3 @@
-$('.js-pscroll').each(function() {
-    var ps = new PerfectScrollbar(this);
-
-    $(window).on('resize', function() {
-        ps.update();
-    })
-
-    $(this).on('ps-x-reach-start', function() {
-        $(this).parent().find('.table100-firstcol').removeClass('shadow-table100-firstcol');
-    });
-
-    $(this).on('ps-scroll-x', function() {
-        $(this).parent().find('.table100-firstcol').addClass('shadow-table100-firstcol');
-    });
-
-});
-
-$(document).ready(function() {
-    // Javascript method's body can be found in assets/js/demos.js
-    demo.initDashboardPageCharts();
-
-});
-
 $(function() {
     $('[data-toggle="tooltip"]').tooltip()
 });
