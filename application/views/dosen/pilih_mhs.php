@@ -12,7 +12,7 @@
                 <div class="col-md-3 col-sm-6">
                     <div class="card" style="width: 14rem;">
                         <div class="container">
-                            <img src="<?=base_url('assets/img/foto/profile/'.$foto)?>"
+                            <img src="<?=base_url('file/foto/profile/'.$foto)?>"
                                 class="rounded-circle mt-3 img-thumbnail" alt="Foto Profile Dosen">
                             <div class="card-body">
                                 <p class="lead text-center text-primary font-weight-bold text-capitalize"><?=$nama?>
