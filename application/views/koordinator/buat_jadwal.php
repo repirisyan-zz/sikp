@@ -99,7 +99,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title font-weight-bold" id="staticBackdropLabel">Buat Jadwal</h5>
+                <h5 class="modal-title font-weight-bold" id="staticBackdropLabel">Buat Jadwal Mahasiswa</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -140,8 +140,8 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="cancel btn btn-secondary" data-dismiss="modal">Batal</button>
-                <button type="submit" class="save btn btn-success">Simpan</button>
+                <button type="button" class="cancel btn btn-secondary" data-dismiss="modal">Batal&nbsp;</button>
+                <button type="submit" class="save btn btn-success">Simpan&nbsp;</button>
             </div>
             </form>
         </div>

@@ -42,6 +42,9 @@ $(document).ready(function (){
     var prop = '<?php echo $this->session->flashdata('notif_prop')?>';
     notif_prop(prop);
 
+    var buat_jadwal = '<?php echo $this->session->flashdata('buat_jadwal')?>';
+    buat_jadwal(buat_jadwal);
+
     var sandi = '<?php echo $this->session->flashdata('sandi')?>';
     notif_ubah_sandi(sandi);
 

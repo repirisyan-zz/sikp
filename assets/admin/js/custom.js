@@ -99,6 +99,16 @@ function pengajuan_prop(prop) {
     }
 };
 
+function buat_jadwal(buat_jadwal) {
+    if (buat_jadwal == 'true') {
+        var message = "Jadwal Mahasiswa berhasil dibuat";
+        nowuiDashboard.showNotification('top', 'right', message, 'success');
+    } else if (buat_jadwal == 'false') {
+        var buat_jadwal = "Terjadi kesalahan saat membuat jadwal";
+        nowuiDashboard.showNotification('top', 'right', message, 'danger');
+    }
+};
+
 function status_sidang(sidang) {
     if (sidang == 'true') {
         $('#menu_pengajuan_prop').remove();
