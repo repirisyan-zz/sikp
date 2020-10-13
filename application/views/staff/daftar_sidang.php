@@ -84,9 +84,9 @@
                 <input type="text" value="<?=$npm?>" name="npm" hidden>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal"
+                <button type="button" class="cancel btn btn-secondary" data-dismiss="modal"
                     style="width: 100px;">Tidak</button>
-                <button type="submit" class="btn btn-success" style="width: 100px;">Ya</button>
+                <button type="submit" class="save btn btn-success" style="width: 100px;">Ya</button>
             </div>
             </form>
         </div>
