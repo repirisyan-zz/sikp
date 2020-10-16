@@ -30,6 +30,7 @@ $('#myTable').DataTable({
     "scrollX": true
 });
 });
+
 $(document).ready(function() {
     $("#filterName").on("keyup", function() {
         let value = $(this).val().toUpperCase();
@@ -46,6 +47,7 @@ $(document).ready(function() {
             }
         }
     });
+    $( "#datepicker" ).datepicker({dateFormat: 'yy'});
 });
 
 // $(document).ready(function(){
@@ -61,7 +63,6 @@ function upperCaseF(a) {
         a.value = a.value.toUpperCase();
     }, 1);
 }
-
 function hapus_berkas(){
     var konfirmasi = $('#konfirmasi_berkas').val();
     if(konfirmasi != 'KONFIRMASI'){

@@ -98,16 +98,22 @@
                 <?php echo form_open('Staff/Kelola_mhs/tambah_mhs','class="form_login"');?>
                 <div class="container">
                     <div class="form-group row">
-                        <label for="colFormLabelSm" class="col-sm-2 col-form-label">NPM</label>
-                        <div class="col-sm-10">
+                        <label for="colFormLabelSm" class="col-sm-4 col-form-label">NPM</label>
+                        <div class="col-sm-8">
                             <input type="number" class="form-control" name="npm" maxlength="20" required>
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="exampleInputPassword1" class="col-sm-2 col-form-label">Nama</label>
-                        <div class="col-sm-10">
+                        <label for="exampleInputPassword1" class="col-sm-4 col-form-label">Nama</label>
+                        <div class="col-sm-8">
                             <input type="text" class="form-control" name="nama" onkeydown="upperCaseF(this)"
                                 maxlength="255" required>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="exampleInputPassword1" class="col-sm-4 col-form-label">Tahun Akademik</label>
+                        <div class="col-sm-8">
+                            <input type="date" id="datepicker" required name="tahun_akademik" class="form-control">
                         </div>
                     </div>
                 </div>
