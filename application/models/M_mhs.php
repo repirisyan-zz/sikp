@@ -9,6 +9,12 @@ class M_mhs extends CI_Model {
         return $query;
     }
 
+    function cek_mhs($npm){
+        $this->db->where('npm',$npm);
+        $query = $this->db->get('bimbingan');
+        return $query;
+    }
+
     function sidang($npm){
         $this->db->set('kemajuan','Seminar');
         $this->db->where('npm',$npm);
@@ -157,6 +163,17 @@ class M_mhs extends CI_Model {
         return $query;
     }
 
+    function riwayat_seminar(){
+        $this->db->where('tanggal_sidang !=', null);
+        $this->db->select('*');
+        $this->db->from('mahasiswa');
+        $this->db->join('dosen', 'mahasiswa.nip = dosen.nip');
+        $this->db->where('status_proposal','diterima');
+        $this->db->join('proposal', 'mahasiswa.npm = proposal.npm');
+        $query = $this->db->get();
+        return $query;
+    }
+
     function lihat_mhs($npm){
         $this->db->where('npm',$npm);
         $query = $this->db->get('mahasiswa');
@@ -192,7 +209,7 @@ class M_mhs extends CI_Model {
         $this->db->from('mahasiswa');
         $this->db->join('proposal','mahasiswa.npm = proposal.npm');
         $this->db->where('proposal.status_proposal','diterima');
-        $this->db->select('mahasiswa.npm,mahasiswa.nama,proposal.judul');
+        $this->db->select('mahasiswa.npm,mahasiswa.nama,proposal.judul,mahasiswa.tahun_akademik');
         $query = $this->db->get();
         return $query;
     }

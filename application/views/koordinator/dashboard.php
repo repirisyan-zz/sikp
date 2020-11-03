@@ -51,6 +51,9 @@
                                     Nama
                                 </th>
                                 <th>
+                                    Tahun Akademik
+                                </th>
+                                <th>
                                     Judul
                                 </th>
                                 <th>
@@ -71,6 +74,7 @@
                                     $nama_dosen = $i['nama_dosen'];
                                     $nama_penguji = $i['nama_penguji'];
                                     $tanggal = $i['tanggal_sidang'];
+                                    $tahun_akademik = $i['tahun_akademik'];
                                 ?>
                                 <tr>
                                     <td>
@@ -78,6 +82,9 @@
                                     </td>
                                     <td>
                                         <?=$nama?>
+                                    </td>
+                                    <td>
+                                        <?=$tahun_akademik?>
                                     </td>
                                     <td>
                                         <?=$judul?>

@@ -61,6 +61,12 @@
                             <p class="font-sidebar">Seminar Mahasiswa</p>
                         </a>
                     </li>
+                    <li id="menu_rekap_laporan">
+                        <a href="<?=base_url('Staff/Daftar_sidang')?>">
+                            <i class="now-ui-icons ui-1_calendar-60"></i>
+                            <p class="font-sidebar">Rekap Laporan</p>
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>

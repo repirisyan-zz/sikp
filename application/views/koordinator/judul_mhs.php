@@ -20,6 +20,9 @@
                                     Nama
                                 </th>
                                 <th>
+                                    Tahun Akademik
+                                </th>
+                                <th>
                                     Judul Kerja Praktek
                                 </th>
                                 <th class="text-center">
@@ -32,6 +35,7 @@
                                         $npm = $i['npm'];
                                         $nama = $i['nama'];
                                         $judul = $i['judul'];
+                                        $tahun_akademik = $i['tahun_akademik'];
                                     ?>
                                 <tr>
                                     <td>
@@ -39,6 +43,9 @@
                                     </td>
                                     <td>
                                         <?php echo $nama?>
+                                    </td>
+                                    <td>
+                                        <?php echo $tahun_akademik?>
                                     </td>
                                     <td>
                                         <?php echo $judul?>

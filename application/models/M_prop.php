@@ -13,6 +13,16 @@ class M_prop extends CI_Model {
         $this->db->from('proposal');
         $this->db->join('mahasiswa','proposal.npm=mahasiswa.npm');
         $this->db->where('proposal.status_proposal','diterima');
+        $this->db->where('mahasiswa.status','Kerja Praktek');
+        return $this->db->get();
+    }
+
+    function riwayat_revisi(){
+        $this->db->select('*');
+        $this->db->from('proposal');
+        $this->db->join('mahasiswa','proposal.npm=mahasiswa.npm');
+        $this->db->where('proposal.status_proposal','ditolak');
+        $this->db->where('mahasiswa.status','Kerja Praktek');
         return $this->db->get();
     }
 

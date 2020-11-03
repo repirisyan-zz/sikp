@@ -37,8 +37,15 @@ class Bimbingan extends CI_Controller {
                 redirect('Dosen/Bimbingan');
             }else{
                 $npm = $this->input->post('npm');
-                $this->M_mhs->sidang($npm);
-                redirect('Dosen/Bimbingan');
+                $cek = $this->M_mhs->cek_mhs($npm)->num_rows();
+                if($cek >= 8){
+                    $this->M_mhs->sidang($npm);
+                    $this->session->set_flashdata('bimbingan_dosen','finish');
+                    redirect('Dosen/Bimbingan');
+                }else{
+                    $this->session->set_flashdata('bimbingan_dosen','not_finish');
+                    redirect('Dosen/Bimbingan');
+                }   
             }
     }
 

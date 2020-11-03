@@ -43,7 +43,7 @@ $(document).ready(function() {
     notif_rek_judul(status);
 
     var bimbingan_dosen = '<?php echo $this->session->flashdata('bimbingan_dosen')?>';
-    bimbingan_dosen(bimbingan_dosen);
+    notif_bimbingan_dosen(bimbingan_dosen);
     
     var upload_foto = '<?php echo $this->session->flashdata('upload_foto')?>';
     notif_upload_foto(upload_foto);

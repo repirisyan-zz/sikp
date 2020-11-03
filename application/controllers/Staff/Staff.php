@@ -81,6 +81,27 @@ class Staff extends CI_Controller {
 	function hapus_file(){
 		$konfirmasi = $this->input->post('konfirmasi');
 		if($konfirmasi == 'KONFIRMASI'){
+			// Enter the name of directory 
+		$pathdir = "Directory Name/";  
+		
+		// Enter the name to creating zipped directory 
+		$zipcreated = "Name of Zip.zip"; 
+		
+		// Create new zip class 
+		$zip = new ZipArchive; 
+		
+		if($zip -> open($zipcreated, ZipArchive::CREATE ) === TRUE) { 
+			
+			// Store the path into the variable 
+			$dir = opendir($pathdir); 
+			
+			while($file = readdir($dir)) { 
+				if(is_file($pathdir.$file)) { 
+					$zip -> addFile($pathdir.$file, $file); 
+				} 
+			} 
+			$zip ->close(); 
+		} 
 			$files = glob('file/laporan/*'); //get all file names
 			foreach($files as $file){
 				if(is_file($file))

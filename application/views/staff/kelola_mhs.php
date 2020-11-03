@@ -19,6 +19,9 @@
                                 Nama
                             </th>
                             <th>
+                                Tahun Akademik
+                            </th>
+                            <th>
                                 Kemajuan
                             </th>
                             <th>
@@ -35,6 +38,7 @@
                                         $nama = $i['nama'];
                                         $kemajuan = $i['kemajuan'];
                                         $status = $i['status'];
+                                        $tahun_akademik = $i['tahun_akademik'];
                                     ?>
                             <tr>
                                 <td>
@@ -42,6 +46,9 @@
                                 </td>
                                 <td class="namaa">
                                     <?php echo $nama?>
+                                </td>
+                                <td>
+                                    <?php echo $tahun_akademik?>
                                 </td>
                                 <td>
                                     <?php if($kemajuan == 'Mulai Kerja Praktek'){
@@ -113,7 +120,7 @@
                     <div class="form-group row">
                         <label for="exampleInputPassword1" class="col-sm-4 col-form-label">Tahun Akademik</label>
                         <div class="col-sm-8">
-                            <input type="date" id="datepicker" required name="tahun_akademik" class="form-control">
+                            <input type="text" required name="tahun_akademik" class="form-control" maxlength="4">
                         </div>
                     </div>
                 </div>
@@ -131,6 +138,7 @@
     foreach($data_mhs->result_array() as $i):
     $npm = $i['npm'];
     $nama = $i['nama'];
+    $tahun_akademik = $i['tahun_akademik'];
 ?>
 <!-- Modal Ubah Mahasiswa-->
 <div class="modal fade" id="ubahMhs<?php echo $npm?>" data-backdrop="static" data-keyboard="false" tabindex="-1"
@@ -147,17 +155,23 @@
                 <div class="container">
                     <?php echo form_open('Staff/Kelola_mhs/ubah_mhs','class="form_login"');?>
                     <div class="form-group row">
-                        <label for="colFormLabelSm" class="col-sm-2 col-form-label">NPM</label>
-                        <div class="col-sm-10">
+                        <label for="colFormLabelSm" class="col-sm-4 col-form-label">NPM</label>
+                        <div class="col-sm-8">
                             <input type="number" class="form-control" readonly name="npm" value="<?php echo $npm?>"
                                 maxlength="20" required>
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="exampleInputPassword1" class="col-sm-2 col-form-label">Nama</label>
-                        <div class="col-sm-10">
+                        <label for="exampleInputPassword1" class="col-sm-4 col-form-label">Nama</label>
+                        <div class="col-sm-8">
                             <input type="text" class="form-control" onkeydown="upperCaseF(this)" name="nama"
                                 value="<?php echo $nama?>" maxlength="255" required>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="colFormLabelSm" class="col-sm-4 col-form-label">Tahun Akademik</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" name="tahun_akademik" value="<?php echo $tahun_akademik?>" required maxlength="4">
                         </div>
                     </div>
                 </div>

@@ -125,12 +125,18 @@ function status_proposal(status_prop) {
     }
 };
 
-function bimbingan_dosen(bimbingan_dosen) {
+function notif_bimbingan_dosen(bimbingan_dosen) {
     if (bimbingan_dosen == 'true') {
         var message = "Sesi bimbingan telah dilakukan";
         nowuiDashboard.showNotification('top', 'right', message, 'success');
     } else if (bimbingan_dosen == 'false') {
         var message = "Terjadi kesalahan saat upload data";
+        nowuiDashboard.showNotification('top', 'right', message, 'danger');
+    } else if (bimbingan_dosen == 'finish') {
+        var message = "Bimbingan mahasiswa telah selesai";
+        nowuiDashboard.showNotification('top', 'right', message, 'success');
+    } else if (bimbingan_dosen == 'not_finish') {
+        var message = "Mahasiswa tersebut belum memenuhi syarat untuk seminar";
         nowuiDashboard.showNotification('top', 'right', message, 'danger');
     }
 };

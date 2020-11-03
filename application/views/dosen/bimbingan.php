@@ -32,7 +32,7 @@
                                 <th>
                                     Keterangan
                                 </th>
-                                <th>
+                                <th class="text-center">
                                     Aksi
                                 </th>
                             </thead>

@@ -73,10 +73,12 @@ class Kelola_mhs extends CI_Controller {
 				redirect(base_url('Staff/Kelola_mhs'));
         }else{
 			$npm = $this->input->post('npm');
-		$nama = $this->input->post('nama');
+			$nama = $this->input->post('nama');
+			$tahun_akademik = $this->input->post('tahun_akademik');
 		$data = array(
 			'npm' => $npm,
-			'nama' => $nama
+			'nama' => $nama,
+			'tahun_akademik' => $tahun_akademik
 		);
 		$cek = $this->M_staff->ubah_mhs($data,$npm);
 		if($cek == TRUE){

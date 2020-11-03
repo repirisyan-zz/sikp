@@ -26,6 +26,7 @@ class Jadwal extends CI_Controller {
             $title['title'] = "Jadwal Sidang";
             $data['data_penguji'] = $this->M_dos->tambah_penguji()->result_array();
             $data['data_mhs'] = $this->M_mhs->mhs_sidang();
+            $data['riwayat_seminar'] = $this->M_mhs->riwayat_seminar();
             $this->load->view('koordinator/header', $title);
             $this->load->view('koordinator/buat_jadwal', $data);
             $this->load->view('koordinator/footer');

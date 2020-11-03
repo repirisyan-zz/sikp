@@ -24,6 +24,7 @@ class Pengajuan_prop extends CI_Controller {
 			$this->load->model('M_prop');
 			$data_proposal['data_proposal'] = $this->M_prop->proposal_koor();
 			$data_proposal['riwayat_proposal'] = $this->M_prop->riwayat_proposal();
+			$data_proposal['riwayat_revisi'] = $this->M_prop->riwayat_revisi();
 			$this->session->set_userdata('menu','menu_pengajuan_prop');
 			$this->load->view('koordinator/header',$x);
 			$this->load->view('koordinator/pengajuan_prop',$data_proposal);

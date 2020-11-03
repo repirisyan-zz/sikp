@@ -1,6 +1,6 @@
 <footer class="footer">
     <div class=" container-fluid ">
-    <div class="copyright" id="copyright">
+        <div class="copyright" id="copyright">
             &copy; <script>
             document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))
             </script>, Designed by REMARI. Coded by REMARI.
@@ -22,19 +22,37 @@
 <script src="<?=base_url('assets/admin/js/now-ui-dashboard.min.js')?>" type="text/javascript"></script>
 <script src="<?=base_url('assets/admin/js/jquery.dataTables.min.js')?>"></script>
 <script src="<?=base_url('assets/admin/js/datatables.min.js')?>"></script>
+<script src="<?=base_url('assets/dataTables.buttons.min.js')?>"></script>
+<script src="<?=base_url('assets/buttons.bootstrap4.min.js')?>"></script>
+<script src="<?=base_url('assets/buttons.html5.min.js')?>"></script>
+<script src="<?=base_url('assets/jszip.min.js')?>"></script>
 <!-- Now Ui Dashboard DEMO methods, don't include it in your project! -->
 <script src="<?=base_url('assets/admin/js/custom.js')?>"></script>
 <script>
-$(document).ready( function () {
-$('#myTable').DataTable({
-    "scrollX": true
+$(document).ready(function() {
+    $('#myTable').DataTable({
+        "scrollX": true
+    });
 });
+$(document).ready(function() {
+    $('#myTable1').DataTable({
+        dom: 'Bfrtip',
+        buttons: [{
+            extend: 'excel',
+            text: 'Unduh <i class="fa fa-download"></i>'
+        }]
+    });
 });
-$(document).ready( function () {
-$('#myTable1').DataTable({
+$(document).ready(function() {
+    $('#myTable2').DataTable({
+        dom: 'Bfrtip',
+        buttons: [{
+            extend: 'excel',
+            text: 'Unduh <i class="fa fa-download"></i>'
+        }]
+    });
 });
-});
-$(document).ready(function (){
+$(document).ready(function() {
     var active_menu = '<?php echo $this->session->userdata('menu')?>';
     menu_koor(active_menu);
 
