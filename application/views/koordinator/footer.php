@@ -26,6 +26,8 @@
 <script src="<?=base_url('assets/buttons.bootstrap4.min.js')?>"></script>
 <script src="<?=base_url('assets/buttons.html5.min.js')?>"></script>
 <script src="<?=base_url('assets/jszip.min.js')?>"></script>
+<script src="<?=base_url('assets/pdfmake.min.js')?>"></script>
+<script src="<?=base_url('assets/vfs_fonts.js')?>"></script>
 <!-- Now Ui Dashboard DEMO methods, don't include it in your project! -->
 <script src="<?=base_url('assets/admin/js/custom.js')?>"></script>
 <script>
@@ -37,19 +39,17 @@ $(document).ready(function() {
 $(document).ready(function() {
     $('#myTable1').DataTable({
         dom: 'Bfrtip',
-        buttons: [{
-            extend: 'excel',
-            text: 'Unduh <i class="fa fa-download"></i>'
-        }]
+        buttons: [
+            'excel','pdf'    
+        ]
     });
 });
 $(document).ready(function() {
     $('#myTable2').DataTable({
         dom: 'Bfrtip',
-        buttons: [{
-            extend: 'excel',
-            text: 'Unduh <i class="fa fa-download"></i>'
-        }]
+        buttons: [
+            'excel','pdf'
+        ]
     });
 });
 $(document).ready(function() {
